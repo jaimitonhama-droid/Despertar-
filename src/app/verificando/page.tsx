@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { db } from "@/lib/firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 import { EstadoPagamento } from "@/types";
@@ -44,35 +45,30 @@ function VerificandoConteudo() {
     };
   }, [pedidoId, router, handleEstado]);
 
-  const mensagens: Record<EstadoPagamento, { emoji: string; titulo: string; desc: string; cor: string }> = {
+  const mensagens: Record<EstadoPagamento, { titulo: string; desc: string; cor: string }> = {
     aguardando: {
-      emoji: "📱",
-      titulo: "Confirma no teu telemóvel",
-      desc: "Enviámos um pedido M-Pesa / e-Mola de 25 MT. Introduz o teu PIN no ecrã para validar o teu despertar.",
-      cor: "#F4C542",
+      titulo: "Confirmação enviada para o M-Pesa",
+      desc: "Um pedido de 25 MT foi enviado para o teu número Vodacom. Digita o teu PIN do M-Pesa no ecrã para desbloquear.",
+      cor: "#E60000",
     },
     processando: {
-      emoji: "⏳",
-      titulo: "A validar confirmação...",
-      desc: "O pagamento está a ser processado pela rede móvel. Fica nesta página por alguns segundos.",
-      cor: "#38BDF8",
+      titulo: "A validar com o M-Pesa...",
+      desc: "Estamos a aguardar a confirmação da rede. Não feches esta página.",
+      cor: "#F4C542",
     },
     confirmado: {
-      emoji: "✅",
       titulo: "Pagamento Confirmado!",
-      desc: "A carregar a tua mensagem pessoal e o teu plano de 7 dias...",
+      desc: "Recebemos o teu pagamento de 25 MT com sucesso. A abrir o teu plano...",
       cor: "#10B981",
     },
     recusado: {
-      emoji: "❌",
-      titulo: "Pagamento Não Concluído",
-      desc: "O pedido expirou ou foi cancelado no telemóvel. Podes tentar novamente sem perder as tuas respostas.",
+      titulo: "Pagamento Cancelado",
+      desc: "A transação M-Pesa foi cancelada ou o PIN foi incorreto. Podes tentar novamente sem perder as tuas respostas.",
       cor: "#EF4444",
     },
     expirado: {
-      emoji: "⌛",
       titulo: "Tempo Limite Atingido",
-      desc: "Não recebemos a resposta a tempo. Clica abaixo para reenviar o pedido de 25 MT.",
+      desc: "Não recebemos a resposta a tempo. Clica abaixo para reenviar o pedido de 25 MT ao teu M-Pesa.",
       cor: "#94A3B8",
     },
   };
@@ -81,23 +77,23 @@ function VerificandoConteudo() {
 
   return (
     <main style={{
-      minHeight: "100vh",
+      minHeight: "100dvh",
       background: "linear-gradient(135deg, #0A0F1E 0%, #101B32 100%)",
-      fontFamily: "'Inter', system-ui, sans-serif",
+      fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
       color: "white",
       display: "flex",
       flexDirection: "column",
     }}>
       {/* HEADER */}
       <header style={{
-        padding: "20px 24px",
+        padding: "16px 20px",
         display: "flex",
         alignItems: "center",
         gap: "10px",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}>
         <span style={{ fontSize: "20px" }}>🌅</span>
-        <span style={{ fontWeight: 800, color: "#F4C542", letterSpacing: "2px" }}>DESPERTAR</span>
+        <span style={{ fontWeight: 800, color: "#F4C542", letterSpacing: "2px", fontSize: "16px" }}>DESPERTAR</span>
       </header>
 
       <div style={{
@@ -105,33 +101,43 @@ function VerificandoConteudo() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "32px 24px",
+        padding: "24px 16px",
       }}>
-        <div style={{ maxWidth: "420px", width: "100%", textAlign: "center" }}>
+        <div style={{ maxWidth: "400px", width: "100%", textAlign: "center" }}>
           
-          {/* ÍCONE COM GLOW */}
+          {/* LOGO M-PESA */}
           <div style={{
-            fontSize: "64px",
+            display: "inline-block",
+            background: "#E60000",
+            borderRadius: "20px",
+            padding: "10px",
+            boxShadow: "0 0 30px rgba(230,0,0,0.35)",
             marginBottom: "20px",
-            filter: "drop-shadow(0 0 24px rgba(244,197,66,0.3))",
           }}>
-            {info.emoji}
+            <Image
+              src="/mpesa.png"
+              alt="M-Pesa"
+              width={72}
+              height={72}
+              style={{ borderRadius: "12px", display: "block" }}
+              priority
+            />
           </div>
 
           <h1 style={{
-            fontSize: "22px",
-            fontWeight: 800,
-            marginBottom: "12px",
+            fontSize: "20px",
+            fontWeight: 900,
+            marginBottom: "10px",
             lineHeight: 1.3,
           }}>
             {info.titulo}
           </h1>
 
           <p style={{
-            fontSize: "14px",
-            color: "rgba(255,255,255,0.6)",
+            fontSize: "13px",
+            color: "rgba(255,255,255,0.65)",
             lineHeight: 1.6,
-            marginBottom: "28px",
+            marginBottom: "24px",
           }}>
             {info.desc}
           </p>
@@ -140,9 +146,9 @@ function VerificandoConteudo() {
           <div style={{
             background: "rgba(255,255,255,0.04)",
             border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: "18px",
-            padding: "16px 20px",
-            marginBottom: "24px",
+            borderRadius: "16px",
+            padding: "14px 18px",
+            marginBottom: "20px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -155,8 +161,8 @@ function VerificandoConteudo() {
                 background: info.cor,
                 boxShadow: `0 0 10px ${info.cor}`,
               }} />
-              <span style={{ fontSize: "13px", fontWeight: 600, color: info.cor, textTransform: "capitalize" }}>
-                {estado}
+              <span style={{ fontSize: "13px", fontWeight: 700, color: info.cor, textTransform: "capitalize" }}>
+                {estado === "aguardando" ? "Aguardando PIN..." : estado}
               </span>
             </div>
             <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>
@@ -164,22 +170,22 @@ function VerificandoConteudo() {
             </span>
           </div>
 
-          {/* INSTRUÇÕES SIMPLES */}
+          {/* INSTRUÇÕES DO CELULAR */}
           {(estado === "aguardando" || estado === "processando") && (
             <div style={{
-              background: "rgba(244,197,66,0.05)",
-              border: "1px solid rgba(244,197,66,0.15)",
+              background: "rgba(230,0,0,0.06)",
+              border: "1px solid rgba(230,0,0,0.2)",
               borderRadius: "16px",
-              padding: "18px",
+              padding: "16px",
               textAlign: "left",
             }}>
-              <p style={{ fontSize: "12px", color: "#F4C542", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "10px" }}>
-                Instruções no telemóvel:
+              <p style={{ fontSize: "11px", color: "#E60000", fontWeight: 800, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "8px" }}>
+                Passos no seu celular:
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "13px", color: "rgba(255,255,255,0.8)" }}>
-                <div>1. Desbloqueia o teu ecrã.</div>
-                <div>2. Aceita a notificação USSD de 25 MT.</div>
-                <div>3. Digita o teu PIN do M-Pesa / e-Mola.</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "6px", fontSize: "12px", color: "rgba(255,255,255,0.85)" }}>
+                <div>1. Olhe para a tela do seu celular Vodacom.</div>
+                <div>2. Aceite o pedido de 25 MT do M-Pesa.</div>
+                <div>3. Digite o seu código PIN do M-Pesa.</div>
               </div>
             </div>
           )}
@@ -190,16 +196,16 @@ function VerificandoConteudo() {
               style={{
                 width: "100%",
                 padding: "16px",
-                borderRadius: "16px",
+                borderRadius: "14px",
                 border: "none",
-                background: "#F4C542",
-                color: "#0A0F1E",
+                background: "#E60000",
+                color: "#FFFFFF",
                 fontWeight: 800,
                 fontSize: "14px",
                 textTransform: "uppercase",
-                letterSpacing: "1px",
+                letterSpacing: "0.5px",
                 cursor: "pointer",
-                boxShadow: "0 0 25px rgba(244,197,66,0.3)",
+                boxShadow: "0 0 25px rgba(230,0,0,0.35)",
               }}
             >
               Tentar Novamente
@@ -215,8 +221,8 @@ function VerificandoConteudo() {
 export default function VerificandoPage() {
   return (
     <Suspense fallback={
-      <div style={{ minHeight: "100vh", background: "#0A0F1E", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <span style={{ fontSize: "40px" }}>🌅</span>
+      <div style={{ minHeight: "100dvh", background: "#0A0F1E", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <span style={{ fontSize: "36px" }}>🌅</span>
       </div>
     }>
       <VerificandoConteudo />
