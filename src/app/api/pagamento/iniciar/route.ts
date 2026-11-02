@@ -5,10 +5,10 @@ export async function POST(req: NextRequest) {
   try {
     const adminDb = getAdminDb();
     const body = await req.json();
-    const { pedidoId, telefone, valor, userId } = body;
+    const { pedidoId, telefone, valor } = body;
 
-    // Validações básicas
-    if (!pedidoId || !telefone || !valor || !userId) {
+    // Validações básicas (não exige mais userId)
+    if (!pedidoId || !telefone || !valor) {
       return NextResponse.json(
         { sucesso: false, mensagem: "Dados incompletos." },
         { status: 400 }
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Verifica se o pedido existe e pertence ao utilizador
+    // Verifica se o pedido existe
     const pedidoRef = adminDb.collection("pedidos").doc(pedidoId);
     const pedidoSnap = await pedidoRef.get();
 
@@ -34,12 +34,6 @@ export async function POST(req: NextRequest) {
     }
 
     const pedidoData = pedidoSnap.data()!;
-    if (pedidoData.userId !== userId) {
-      return NextResponse.json(
-        { sucesso: false, mensagem: "Acesso não autorizado." },
-        { status: 403 }
-      );
-    }
 
     if (pedidoData.estado === "confirmado") {
       return NextResponse.json(
@@ -52,7 +46,7 @@ export async function POST(req: NextRequest) {
     const GATEWAY_API_KEY = process.env.GATEWAY_API_KEY;
 
     if (!GATEWAY_BASE_URL || !GATEWAY_API_KEY) {
-      // Modo de desenvolvimento / sem credenciais
+      // Modo de desenvolvimento (aguardando credenciais da gateway)
       console.warn("[DESPERTAR] Gateway não configurada. Modo desenvolvimento.");
       await pedidoRef.update({
         estado: "aguardando",
@@ -63,12 +57,13 @@ export async function POST(req: NextRequest) {
 
       return NextResponse.json({
         sucesso: true,
-        mensagem: "Pedido criado em modo desenvolvimento.",
+        mensagem: "Pedido M-Pesa iniciado em modo teste.",
         pedidoId,
         modo: "desenvolvimento",
       });
     }
 
+    // Chamada oficial à Gateway M-Pesa
     const gatewayResponse = await fetch(`${GATEWAY_BASE_URL}/transactions`, {
       method: "POST",
       headers: {
@@ -89,7 +84,7 @@ export async function POST(req: NextRequest) {
       const errData = await gatewayResponse.json().catch(() => ({}));
       console.error("[DESPERTAR] Erro na gateway:", errData);
       return NextResponse.json(
-        { sucesso: false, mensagem: "Erro ao iniciar pagamento. Tenta novamente." },
+        { sucesso: false, mensagem: "Erro ao iniciar M-Pesa. Verifica o teu número." },
         { status: 502 }
       );
     }
@@ -105,7 +100,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       sucesso: true,
-      mensagem: "Pedido de pagamento enviado para o teu telemóvel.",
+      mensagem: "Pedido enviado para o teu M-Pesa.",
       pedidoId,
     });
   } catch (err) {

@@ -3,14 +3,12 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { useAuth } from "@/contexts/AuthContext";
 import { CATEGORIAS } from "@/data/engine";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function PagamentoPage() {
   const router = useRouter();
-  const { user, signInWithGoogle } = useAuth();
   const [categoriaId, setCategoriaId] = useState("");
   const [telefone, setTelefone] = useState("");
   const [estado, setEstado] = useState<"idle" | "processando" | "erro">("idle");
@@ -21,19 +19,18 @@ export default function PagamentoPage() {
     const completado = sessionStorage.getItem("completado");
     if (!id || !completado) { router.replace("/escolha"); return; }
     setCategoriaId(id);
+
+    // Se já tinha telefone digitado anteriormente, recupera
+    const telSalvo = localStorage.getItem("despertar_telefone");
+    if (telSalvo) setTelefone(telSalvo);
   }, [router]);
 
   const catInfo = CATEGORIAS.find((c) => c.id === categoriaId);
 
   const handlePagar = async () => {
-    if (!user) {
-      await signInWithGoogle();
-      return;
-    }
-
     const numeroLimpo = telefone.replace(/\D/g, "");
     if (!numeroLimpo || numeroLimpo.length !== 9 || (!numeroLimpo.startsWith("84") && !numeroLimpo.startsWith("85"))) {
-      setErro("Digita um número M-Pesa válido (84 ou 85).");
+      setErro("Insere um número M-Pesa válido da Vodacom (iniciado por 84 ou 85).");
       return;
     }
 
@@ -42,15 +39,18 @@ export default function PagamentoPage() {
 
     try {
       const respostas = JSON.parse(sessionStorage.getItem("respostas") || "{}");
+
+      // Salva o telefone no dispositivo do cliente para ele nunca perder o acesso
+      localStorage.setItem("despertar_telefone", numeroLimpo);
+
+      // Cria o pedido no Firestore associado diretamente ao número M-Pesa
       const pedidoRef = await addDoc(collection(db, "pedidos"), {
-        userId: user.uid,
-        userEmail: user.email,
+        telefone: numeroLimpo,
         categoriaId,
         respostas,
         valor: 25,
         moeda: "MT",
         metodo: "m-pesa",
-        telefone: numeroLimpo,
         estado: "aguardando",
         criadoEm: serverTimestamp(),
       });
@@ -62,18 +62,20 @@ export default function PagamentoPage() {
           pedidoId: pedidoRef.id,
           telefone: numeroLimpo,
           valor: 25,
-          userId: user.uid,
           metodo: "m-pesa",
         }),
       });
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data.mensagem || "Erro ao conectar.");
+      if (!res.ok) throw new Error(data.mensagem || "Erro ao conectar ao M-Pesa.");
 
+      // Guarda localmente o ID do pedido
       sessionStorage.setItem("pedidoId", pedidoRef.id);
+      localStorage.setItem("despertar_ultimo_pedido", pedidoRef.id);
+
       router.push(`/verificando?pedido=${pedidoRef.id}`);
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "Erro ao processar.";
+      const msg = err instanceof Error ? err.message : "Erro inesperado ao conectar ao M-Pesa.";
       setErro(msg);
       setEstado("idle");
     }
@@ -90,7 +92,7 @@ export default function PagamentoPage() {
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
-      padding: "14px 16px 20px",
+      padding: "16px 20px 24px",
       boxSizing: "border-box",
     }}>
       {/* HEADER COMPACTO */}
@@ -98,33 +100,33 @@ export default function PagamentoPage() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        paddingBottom: "10px",
+        paddingBottom: "12px",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}>
         <button onClick={() => router.back()} style={{
           background: "none", border: "none", color: "rgba(255,255,255,0.6)",
-          fontSize: "18px", cursor: "pointer", padding: 0,
+          fontSize: "20px", cursor: "pointer", padding: 0,
         }}>←</button>
-        <span style={{ fontWeight: 800, color: "#F4C542", letterSpacing: "1.5px", fontSize: "13px" }}>
+        <span style={{ fontWeight: 800, color: "#F4C542", letterSpacing: "1.5px", fontSize: "14px" }}>
           DESPERTAR
         </span>
         <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.5)" }}>
-          Passo 2 de 2
+          {catInfo?.emoji} {catInfo?.titulo}
         </span>
       </header>
 
-      {/* BLOCO PRINCIPAL */}
-      <div style={{ maxWidth: "400px", margin: "0 auto", width: "100%" }}>
+      {/* BLOCO CENTRAL ULTRA-LIMPO */}
+      <div style={{ maxWidth: "380px", margin: "0 auto", width: "100%" }}>
 
-        {/* CARD DE CONTEXTO: O QUE A PESSOA ESTÁ A PAGAR */}
+        {/* CARD DE RESUMO DO QUE ESTÁ A PAGAR */}
         <div style={{
           background: "rgba(244,197,66,0.05)",
           border: "1px solid rgba(244,197,66,0.2)",
           borderRadius: "16px",
           padding: "14px 16px",
-          margin: "12px 0",
+          margin: "12px 0 16px",
         }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "4px" }}>
             <span style={{ fontSize: "11px", color: "#F4C542", fontWeight: 800, letterSpacing: "1px", textTransform: "uppercase" }}>
               🔒 Plano Pronto para Desbloqueio
             </span>
@@ -136,10 +138,9 @@ export default function PagamentoPage() {
           </h2>
 
           <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)", lineHeight: 1.5, margin: "0 0 10px" }}>
-            Cruzámos as tuas 7 respostas. Paga a taxa única para ler a tua mensagem e aceder às tuas tarefas diárias.
+            Cruzámos as tuas 7 respostas. Paga apenas 25 MT via M-Pesa para desbloquear a tua mensagem e as tuas tarefas.
           </p>
 
-          {/* 3 CHIPS COMPACTOS DO QUE ESTÁ INCLUSO */}
           <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
             {["✓ Diagnóstico real", "✓ Tarefas de 7 dias", "✓ Desafios diários"].map((tag, i) => (
               <span key={i} style={{
@@ -157,79 +158,48 @@ export default function PagamentoPage() {
           </div>
         </div>
 
-        {/* IDENTIFICAÇÃO GMAIL RÁPIDA */}
-        {!user ? (
-          <button onClick={signInWithGoogle} style={{
-            width: "100%",
-            background: "rgba(234,67,53,0.08)",
-            border: "1.5px solid rgba(234,67,53,0.25)",
-            borderRadius: "12px",
-            padding: "9px 12px",
-            cursor: "pointer",
-            color: "white",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            fontSize: "12px",
-            fontWeight: 700,
-            marginBottom: "12px",
-            boxSizing: "border-box",
-          }}>
-            <span>✉️ Entrar com Gmail</span>
-            <div style={{ display: "flex", gap: "3px" }}>
-              <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#EA4335" }} />
-              <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#FBBC05" }} />
-              <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#34A853" }} />
-            </div>
-          </button>
-        ) : (
-          <div style={{
-            marginBottom: "10px", padding: "6px 10px",
-            background: "rgba(22,163,74,0.08)", border: "1px solid rgba(22,163,74,0.2)",
-            borderRadius: "10px", display: "flex", alignItems: "center", gap: "6px",
-          }}>
-            <span style={{ color: "#16A34A", fontWeight: 900, fontSize: "11px" }}>✓</span>
-            <span style={{ fontSize: "11px", color: "#16A34A", fontWeight: 700 }}>
-              Sessão iniciada com Gmail
-            </span>
-          </div>
-        )}
-
-        {/* BLOCO DE COBRANÇA M-PESA */}
+        {/* ÁREA DE PAGAMENTO M-PESA */}
         <div style={{
           background: "rgba(255,255,255,0.03)",
           border: "1px solid rgba(255,255,255,0.08)",
           borderRadius: "16px",
-          padding: "12px 14px",
-          marginBottom: "12px",
+          padding: "16px",
+          marginBottom: "16px",
         }}>
-          {/* TOPO: LOGO M-PESA + VALOR 25 MT */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          {/* LOGO M-PESA + VALOR 25 MT */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <div style={{
                 background: "#E60000",
-                borderRadius: "8px",
-                padding: "4px",
+                borderRadius: "10px",
+                padding: "6px",
                 display: "flex",
+                boxShadow: "0 0 15px rgba(230,0,0,0.3)",
               }}>
-                <Image src="/mpesa.png" alt="M-Pesa" width={32} height={32} style={{ borderRadius: "4px" }} />
+                <Image src="/mpesa.png" alt="M-Pesa" width={36} height={36} style={{ borderRadius: "6px" }} />
               </div>
-              <span style={{ fontSize: "12px", fontWeight: 700, color: "white" }}>M-Pesa</span>
+              <div>
+                <span style={{ fontSize: "14px", fontWeight: 800, color: "white", display: "block" }}>M-Pesa</span>
+                <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.5)" }}>Vodacom Moçambique</span>
+              </div>
             </div>
             <div style={{ textAlign: "right" }}>
-              <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.4)", display: "block" }}>Taxa de desbloqueio</span>
-              <span style={{ fontSize: "22px", fontWeight: 900, color: "#F4C542", lineHeight: 1 }}>25 MT</span>
+              <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.4)", display: "block" }}>Taxa única</span>
+              <span style={{ fontSize: "24px", fontWeight: 900, color: "#F4C542", lineHeight: 1 }}>25 MT</span>
             </div>
           </div>
 
-          {/* INPUT DO NÚMERO */}
+          {/* INPUT DO NÚMERO M-PESA */}
+          <label style={{ display: "block", fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.7)", marginBottom: "6px" }}>
+            Digita o teu número M-Pesa:
+          </label>
           <div style={{ position: "relative" }}>
             <span style={{
               position: "absolute",
-              left: "12px",
+              left: "14px",
               top: "50%",
               transform: "translateY(-50%)",
-              fontSize: "13px",
+              fontSize: "14px",
               fontWeight: 800,
               color: "#E60000",
             }}>
@@ -243,30 +213,30 @@ export default function PagamentoPage() {
               placeholder="84XXXXXXX ou 85XXXXXXX"
               style={{
                 width: "100%",
-                background: "rgba(255,255,255,0.05)",
-                border: "1.5px solid rgba(255,255,255,0.12)",
+                background: "rgba(255,255,255,0.06)",
+                border: "1.5px solid rgba(255,255,255,0.14)",
                 borderRadius: "12px",
-                padding: "12px 12px 12px 52px",
+                padding: "14px 14px 14px 58px",
                 color: "white",
-                fontSize: "15px",
+                fontSize: "16px",
                 fontWeight: 700,
                 outline: "none",
                 fontFamily: "Inter, -apple-system, sans-serif",
                 boxSizing: "border-box",
               }}
               onFocus={e => (e.target as HTMLInputElement).style.borderColor = "#E60000"}
-              onBlur={e => (e.target as HTMLInputElement).style.borderColor = "rgba(255,255,255,0.12)"}
+              onBlur={e => (e.target as HTMLInputElement).style.borderColor = "rgba(255,255,255,0.14)"}
             />
           </div>
-          <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.4)", margin: "4px 0 0", textAlign: "center" }}>
-            Receberás o pop-up no celular para digitar o teu PIN M-Pesa
+          <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.4)", margin: "6px 0 0", textAlign: "center" }}>
+            Receberás o pop-up no teu celular para digitar o PIN M-Pesa
           </p>
         </div>
 
-        {/* ERRO */}
+        {/* MENSAGEM DE ERRO SE HOUVER */}
         {erro && (
           <div style={{
-            marginBottom: "10px", padding: "8px 10px",
+            marginBottom: "12px", padding: "10px 12px",
             background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)",
             borderRadius: "10px",
           }}>
@@ -274,7 +244,7 @@ export default function PagamentoPage() {
           </div>
         )}
 
-        {/* BOTÃO DESBLOQUEAR */}
+        {/* BOTÃO PRINCIPAL DE PAGAMENTO */}
         <button
           onClick={handlePagar}
           disabled={estado === "processando"}
@@ -294,15 +264,15 @@ export default function PagamentoPage() {
             transition: "all 0.15s",
           }}
         >
-          {estado === "processando" ? "A contactar M-Pesa..." : "DESBLOQUEAR PLANO — 25 MT →"}
+          {estado === "processando" ? "A contactar M-Pesa..." : "PAGAR 25 MT COM M-PESA →"}
         </button>
 
       </div>
 
-      {/* RODAPÉ */}
-      <footer style={{ textAlign: "center", paddingTop: "6px" }}>
+      {/* RODAPÉ MÍNIMO */}
+      <footer style={{ textAlign: "center", paddingTop: "8px" }}>
         <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", margin: 0 }}>
-          🔒 Acesso imediato após confirmação · M-Pesa Moçambique
+          🔒 Pagamento 100% Seguro · Sem cadastro necessário · M-Pesa Moçambique
         </p>
       </footer>
     </main>

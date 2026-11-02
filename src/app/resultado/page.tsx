@@ -11,7 +11,8 @@ import { Suspense } from "react";
 function ResultadoConteudo() {
   const router = useRouter();
   const params = useSearchParams();
-  const pedidoId = params.get("pedido");
+  const pedidoIdParam = params.get("pedido");
+  const [pedidoId, setPedidoId] = useState<string | null>(pedidoIdParam);
   const [categoria, setCategoria] = useState<Categoria | null>(null);
   const [nivel, setNivel] = useState("moderado");
   const [diasConcluidos, setDiasConcluidos] = useState<number[]>([]);
@@ -19,13 +20,16 @@ function ResultadoConteudo() {
   const [copiado, setCopiado] = useState(false);
 
   const carregarResultado = useCallback(async () => {
-    if (!pedidoId) {
+    // Busca do parâmetro da URL ou da memória do telemóvel
+    const id = pedidoIdParam || localStorage.getItem("despertar_ultimo_pedido");
+    if (!id) {
       router.replace("/escolha");
       return;
     }
+    setPedidoId(id);
 
     try {
-      const pedidoSnap = await getDoc(doc(db, "pedidos", pedidoId));
+      const pedidoSnap = await getDoc(doc(db, "pedidos", id));
       if (!pedidoSnap.exists()) {
         router.replace("/escolha");
         return;
@@ -33,8 +37,9 @@ function ResultadoConteudo() {
 
       const pedido = pedidoSnap.data();
 
+      // Permite acesso se confirmado ou no modo de desenvolvimento
       if (pedido.estado !== "confirmado" && pedido.gatewayRef?.startsWith("DEV-") !== true) {
-        router.replace(`/verificando?pedido=${pedidoId}`);
+        router.replace(`/verificando?pedido=${id}`);
         return;
       }
 
@@ -44,9 +49,13 @@ function ResultadoConteudo() {
       const n = analisarRespostas(pedido.categoriaId, pedido.respostas);
       setNivel(n);
 
-      const resultadoSnap = await getDoc(doc(db, "resultados", pedidoId));
+      const resultadoSnap = await getDoc(doc(db, "resultados", id));
       if (resultadoSnap.exists()) {
         setDiasConcluidos(resultadoSnap.data().diasConcluidos || []);
+      } else {
+        // Tenta recuperar do armazenamento local do celular
+        const salvos = localStorage.getItem(`despertar_dias_${id}`);
+        if (salvos) setDiasConcluidos(JSON.parse(salvos));
       }
 
       setLoading(false);
@@ -54,7 +63,7 @@ function ResultadoConteudo() {
       console.error(err);
       router.replace("/escolha");
     }
-  }, [pedidoId, router]);
+  }, [pedidoIdParam, router]);
 
   useEffect(() => {
     carregarResultado();
@@ -66,13 +75,15 @@ function ResultadoConteudo() {
       : [...diasConcluidos, dia];
     setDiasConcluidos(novos);
 
+    // Salva na memória do telefone
     if (pedidoId) {
+      localStorage.setItem(`despertar_dias_${pedidoId}`, JSON.stringify(novos));
       try {
         await updateDoc(doc(db, "resultados", pedidoId), {
           diasConcluidos: novos,
         });
       } catch {
-        // Ignora silenciosamente
+        // Mantém offline sem quebrar
       }
     }
   };
@@ -131,7 +142,7 @@ function ResultadoConteudo() {
       }}>
         <span style={{ fontSize: "40px" }}>🌅</span>
         <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "13px", fontFamily: "Inter, sans-serif" }}>
-          A preparar a tua mensagem...
+          A carregar a tua mensagem...
         </p>
       </div>
     );
@@ -171,42 +182,40 @@ function ResultadoConteudo() {
         </span>
       </header>
 
-      <div style={{ maxWidth: "440px", margin: "0 auto", padding: "24px 16px 48px", boxSizing: "border-box" }}>
+      <div style={{ maxWidth: "440px", margin: "0 auto", padding: "20px 16px 40px", boxSizing: "border-box" }}>
         
         {/* CABEÇALHO DA MENSAGEM */}
         <div style={{
           background: "rgba(255,255,255,0.04)",
           border: "1px solid rgba(255,255,255,0.08)",
           borderRadius: "18px",
-          padding: "20px 18px",
-          marginBottom: "20px",
+          padding: "18px 16px",
+          marginBottom: "18px",
         }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
             <span style={{ fontSize: "26px" }}>{catInfo?.emoji}</span>
             <div>
               <p style={{ fontSize: "10px", color: "#F4C542", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 800, margin: 0 }}>
                 A Tua Mensagem Pessoal
               </p>
-              <h1 style={{ fontSize: "17px", fontWeight: 800, margin: "2px 0 0" }}>
+              <h1 style={{ fontSize: "16px", fontWeight: 800, margin: "2px 0 0" }}>
                 {categoria.plano.titulo}
               </h1>
             </div>
           </div>
-          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)", lineHeight: 1.5, margin: "0 0 14px" }}>
-            Copia esta mensagem para o teu WhatsApp ou notas para reler durante a tua semana.
-          </p>
 
           <button
             onClick={copiarMensagem}
             style={{
+              marginTop: "12px",
               width: "100%",
-              padding: "14px",
+              padding: "13px",
               borderRadius: "12px",
               border: "none",
               background: copiado ? "#10B981" : "#F4C542",
               color: "#0A0F1E",
               fontWeight: 800,
-              fontSize: "13px",
+              fontSize: "12px",
               letterSpacing: "0.5px",
               textTransform: "uppercase",
               cursor: "pointer",
@@ -214,7 +223,7 @@ function ResultadoConteudo() {
               boxShadow: "0 0 20px rgba(244,197,66,0.25)",
             }}
           >
-            {copiado ? "✓ Mensagem Copiada!" : "📋 Copiar Toda a Mensagem"}
+            {copiado ? "✓ Mensagem Copiada!" : "📋 Copiar Mensagem para WhatsApp"}
           </button>
         </div>
 
@@ -223,11 +232,11 @@ function ResultadoConteudo() {
           background: "rgba(244,197,66,0.04)",
           border: "1px solid rgba(244,197,66,0.15)",
           borderRadius: "18px",
-          padding: "18px 16px",
-          marginBottom: "20px",
+          padding: "16px 14px",
+          marginBottom: "18px",
         }}>
-          <p style={{ fontSize: "11px", color: "#F4C542", fontWeight: 800, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "8px", margin: 0 }}>
-            💬 Diagnóstico
+          <p style={{ fontSize: "11px", color: "#F4C542", fontWeight: 800, letterSpacing: "1px", textTransform: "uppercase", margin: 0 }}>
+            💬 Diagnóstico do teu padrão
           </p>
           <p style={{ fontSize: "13px", lineHeight: 1.6, color: "rgba(255,255,255,0.85)", margin: "8px 0 12px" }}>
             {categoria.plano.analise_intro}
@@ -235,7 +244,7 @@ function ResultadoConteudo() {
           <div style={{
             background: "rgba(0,0,0,0.3)",
             borderRadius: "10px",
-            padding: "10px 14px",
+            padding: "10px 12px",
             borderLeft: "3px solid #F4C542",
           }}>
             <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.75)", lineHeight: 1.5, margin: 0 }}>
@@ -246,7 +255,7 @@ function ResultadoConteudo() {
 
         {/* PROGRESSO INTERATIVO DOS 7 DIAS */}
         <div style={{ marginBottom: "16px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
             <h2 style={{ fontSize: "14px", fontWeight: 800, margin: 0 }}>
               🗓️ O Teu Plano de 7 Dias
             </h2>
@@ -260,7 +269,7 @@ function ResultadoConteudo() {
             background: "rgba(255,255,255,0.08)",
             borderRadius: "100px",
             overflow: "hidden",
-            marginBottom: "18px",
+            marginBottom: "16px",
           }}>
             <div style={{
               height: "100%",
@@ -271,7 +280,7 @@ function ResultadoConteudo() {
           </div>
 
           {/* LISTA DOS 7 DIAS */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {categoria.plano.dias.map((dia: DiaPlano) => {
               const feito = diasConcluidos.includes(dia.dia);
               return (
@@ -281,15 +290,15 @@ function ResultadoConteudo() {
                     background: feito ? "rgba(16,185,129,0.06)" : "rgba(255,255,255,0.04)",
                     border: feito ? "1.5px solid rgba(16,185,129,0.35)" : "1.5px solid rgba(255,255,255,0.07)",
                     borderRadius: "16px",
-                    padding: "16px",
+                    padding: "14px",
                     transition: "all 0.2s",
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                       <div style={{
-                        width: "24px",
-                        height: "24px",
+                        width: "22px",
+                        height: "22px",
                         borderRadius: "50%",
                         background: feito ? "#10B981" : "rgba(244,197,66,0.15)",
                         color: feito ? "#0A0F1E" : "#F4C542",
@@ -330,10 +339,10 @@ function ResultadoConteudo() {
                   <div style={{
                     background: "rgba(0,0,0,0.25)",
                     borderRadius: "10px",
-                    padding: "10px 12px",
+                    padding: "10px",
                     display: "flex",
                     flexDirection: "column",
-                    gap: "6px",
+                    gap: "5px",
                     fontSize: "11px",
                   }}>
                     <div>
@@ -360,11 +369,11 @@ function ResultadoConteudo() {
           background: "rgba(244,197,66,0.06)",
           border: "1px solid rgba(244,197,66,0.2)",
           borderRadius: "16px",
-          padding: "20px 16px",
+          padding: "18px 14px",
           textAlign: "center",
-          marginBottom: "20px",
+          marginBottom: "18px",
         }}>
-          <span style={{ fontSize: "28px", display: "block", marginBottom: "8px" }}>🌅</span>
+          <span style={{ fontSize: "28px", display: "block", marginBottom: "6px" }}>🌅</span>
           <p style={{
             fontSize: "13px",
             fontStyle: "italic",
@@ -387,7 +396,7 @@ function ResultadoConteudo() {
             background: "#F4C542",
             color: "#0A0F1E",
             fontWeight: 800,
-            fontSize: "14px",
+            fontSize: "13px",
             letterSpacing: "0.5px",
             textTransform: "uppercase",
             cursor: "pointer",
