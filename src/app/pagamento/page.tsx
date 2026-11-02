@@ -33,7 +33,7 @@ export default function PagamentoPage() {
 
     const numeroLimpo = telefone.replace(/\D/g, "");
     if (!numeroLimpo || numeroLimpo.length !== 9 || (!numeroLimpo.startsWith("84") && !numeroLimpo.startsWith("85"))) {
-      setErro("Digita um número 84 ou 85 válido.");
+      setErro("Digita um número M-Pesa válido (84 ou 85).");
       return;
     }
 
@@ -90,7 +90,7 @@ export default function PagamentoPage() {
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
-      padding: "16px 20px 24px",
+      padding: "14px 16px 20px",
       boxSizing: "border-box",
     }}>
       {/* HEADER COMPACTO */}
@@ -98,67 +98,82 @@ export default function PagamentoPage() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        paddingBottom: "12px",
+        paddingBottom: "10px",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}>
         <button onClick={() => router.back()} style={{
           background: "none", border: "none", color: "rgba(255,255,255,0.6)",
-          fontSize: "20px", cursor: "pointer", padding: 0,
+          fontSize: "18px", cursor: "pointer", padding: 0,
         }}>←</button>
-        <span style={{ fontWeight: 800, color: "#F4C542", letterSpacing: "1.5px", fontSize: "14px" }}>
+        <span style={{ fontWeight: 800, color: "#F4C542", letterSpacing: "1.5px", fontSize: "13px" }}>
           DESPERTAR
         </span>
-        <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)" }}>
-          {catInfo?.emoji} {catInfo?.titulo}
+        <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.5)" }}>
+          Passo 2 de 2
         </span>
       </header>
 
-      {/* BLOCO CENTRAL ULTRA-COMPACTO */}
-      <div style={{ maxWidth: "380px", margin: "0 auto", width: "100%" }}>
-        
-        {/* LOGO M-PESA + VALOR DIRETO */}
-        <div style={{ textAlign: "center", margin: "14px 0" }}>
-          <div style={{
-            display: "inline-block",
-            background: "#E60000",
-            borderRadius: "14px",
-            padding: "6px",
-            boxShadow: "0 0 20px rgba(230,0,0,0.3)",
-            marginBottom: "8px",
-          }}>
-            <Image
-              src="/mpesa.png"
-              alt="M-Pesa"
-              width={48}
-              height={48}
-              style={{ borderRadius: "8px", display: "block" }}
-              priority
-            />
+      {/* BLOCO PRINCIPAL */}
+      <div style={{ maxWidth: "400px", margin: "0 auto", width: "100%" }}>
+
+        {/* CARD DE CONTEXTO: O QUE A PESSOA ESTÁ A PAGAR */}
+        <div style={{
+          background: "rgba(244,197,66,0.05)",
+          border: "1px solid rgba(244,197,66,0.2)",
+          borderRadius: "16px",
+          padding: "14px 16px",
+          margin: "12px 0",
+        }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
+            <span style={{ fontSize: "11px", color: "#F4C542", fontWeight: 800, letterSpacing: "1px", textTransform: "uppercase" }}>
+              🔒 Plano Pronto para Desbloqueio
+            </span>
+            <span style={{ fontSize: "12px" }}>{catInfo?.emoji}</span>
           </div>
-          <div style={{ fontSize: "28px", fontWeight: 900, color: "#F4C542", lineHeight: 1 }}>
-            25 MT
-          </div>
-          <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.5)", margin: "4px 0 0" }}>
-            Pagamento via M-Pesa Vodacom
+
+          <h2 style={{ fontSize: "15px", fontWeight: 800, margin: "0 0 6px", lineHeight: 1.3 }}>
+            Plano de 7 dias: {catInfo?.titulo}
+          </h2>
+
+          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)", lineHeight: 1.5, margin: "0 0 10px" }}>
+            Cruzámos as tuas 7 respostas. Paga a taxa única para ler a tua mensagem e aceder às tuas tarefas diárias.
           </p>
+
+          {/* 3 CHIPS COMPACTOS DO QUE ESTÁ INCLUSO */}
+          <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+            {["✓ Diagnóstico real", "✓ Tarefas de 7 dias", "✓ Desafios diários"].map((tag, i) => (
+              <span key={i} style={{
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.1)",
+                borderRadius: "100px",
+                padding: "3px 8px",
+                fontSize: "10px",
+                fontWeight: 600,
+                color: "rgba(255,255,255,0.85)",
+              }}>
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* IDENTIFICAÇÃO GMAIL COMPACTA */}
+        {/* IDENTIFICAÇÃO GMAIL RÁPIDA */}
         {!user ? (
           <button onClick={signInWithGoogle} style={{
             width: "100%",
             background: "rgba(234,67,53,0.08)",
-            border: "1.5px solid rgba(234,67,53,0.3)",
+            border: "1.5px solid rgba(234,67,53,0.25)",
             borderRadius: "12px",
-            padding: "10px 14px",
+            padding: "9px 12px",
             cursor: "pointer",
             color: "white",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            fontSize: "13px",
+            fontSize: "12px",
             fontWeight: 700,
-            marginBottom: "14px",
+            marginBottom: "12px",
+            boxSizing: "border-box",
           }}>
             <span>✉️ Entrar com Gmail</span>
             <div style={{ display: "flex", gap: "3px" }}>
@@ -169,26 +184,52 @@ export default function PagamentoPage() {
           </button>
         ) : (
           <div style={{
-            marginBottom: "12px", padding: "8px 12px",
-            background: "rgba(22,163,74,0.1)", border: "1px solid rgba(22,163,74,0.25)",
-            borderRadius: "10px", display: "flex", alignItems: "center", gap: "8px",
+            marginBottom: "10px", padding: "6px 10px",
+            background: "rgba(22,163,74,0.08)", border: "1px solid rgba(22,163,74,0.2)",
+            borderRadius: "10px", display: "flex", alignItems: "center", gap: "6px",
           }}>
-            <span style={{ color: "#16A34A", fontWeight: 900, fontSize: "12px" }}>✓</span>
+            <span style={{ color: "#16A34A", fontWeight: 900, fontSize: "11px" }}>✓</span>
             <span style={{ fontSize: "11px", color: "#16A34A", fontWeight: 700 }}>
               Sessão iniciada com Gmail
             </span>
           </div>
         )}
 
-        {/* CAMPO TELEFONE M-PESA */}
-        <div style={{ marginBottom: "14px" }}>
+        {/* BLOCO DE COBRANÇA M-PESA */}
+        <div style={{
+          background: "rgba(255,255,255,0.03)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: "16px",
+          padding: "12px 14px",
+          marginBottom: "12px",
+        }}>
+          {/* TOPO: LOGO M-PESA + VALOR 25 MT */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <div style={{
+                background: "#E60000",
+                borderRadius: "8px",
+                padding: "4px",
+                display: "flex",
+              }}>
+                <Image src="/mpesa.png" alt="M-Pesa" width={32} height={32} style={{ borderRadius: "4px" }} />
+              </div>
+              <span style={{ fontSize: "12px", fontWeight: 700, color: "white" }}>M-Pesa</span>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.4)", display: "block" }}>Taxa de desbloqueio</span>
+              <span style={{ fontSize: "22px", fontWeight: 900, color: "#F4C542", lineHeight: 1 }}>25 MT</span>
+            </div>
+          </div>
+
+          {/* INPUT DO NÚMERO */}
           <div style={{ position: "relative" }}>
             <span style={{
               position: "absolute",
-              left: "14px",
+              left: "12px",
               top: "50%",
               transform: "translateY(-50%)",
-              fontSize: "14px",
+              fontSize: "13px",
               fontWeight: 800,
               color: "#E60000",
             }}>
@@ -202,12 +243,12 @@ export default function PagamentoPage() {
               placeholder="84XXXXXXX ou 85XXXXXXX"
               style={{
                 width: "100%",
-                background: "rgba(255,255,255,0.06)",
-                border: "2px solid rgba(255,255,255,0.12)",
-                borderRadius: "14px",
-                padding: "14px 14px 14px 56px",
+                background: "rgba(255,255,255,0.05)",
+                border: "1.5px solid rgba(255,255,255,0.12)",
+                borderRadius: "12px",
+                padding: "12px 12px 12px 52px",
                 color: "white",
-                fontSize: "16px",
+                fontSize: "15px",
                 fontWeight: 700,
                 outline: "none",
                 fontFamily: "Inter, -apple-system, sans-serif",
@@ -222,10 +263,10 @@ export default function PagamentoPage() {
           </p>
         </div>
 
-        {/* MENSAGEM DE ERRO SE HOUVER */}
+        {/* ERRO */}
         {erro && (
           <div style={{
-            marginBottom: "12px", padding: "8px 12px",
+            marginBottom: "10px", padding: "8px 10px",
             background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)",
             borderRadius: "10px",
           }}>
@@ -233,7 +274,7 @@ export default function PagamentoPage() {
           </div>
         )}
 
-        {/* BOTÃO PRINCIPAL DE PAGAMENTO */}
+        {/* BOTÃO DESBLOQUEAR */}
         <button
           onClick={handlePagar}
           disabled={estado === "processando"}
@@ -253,15 +294,15 @@ export default function PagamentoPage() {
             transition: "all 0.15s",
           }}
         >
-          {estado === "processando" ? "A contactar M-Pesa..." : "PAGAR 25 MT COM M-PESA →"}
+          {estado === "processando" ? "A contactar M-Pesa..." : "DESBLOQUEAR PLANO — 25 MT →"}
         </button>
 
       </div>
 
-      {/* RODAPÉ MÍNIMO */}
-      <footer style={{ textAlign: "center", paddingTop: "8px" }}>
+      {/* RODAPÉ */}
+      <footer style={{ textAlign: "center", paddingTop: "6px" }}>
         <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", margin: 0 }}>
-          🔒 Pagamento 100% Seguro · M-Pesa Moçambique
+          🔒 Acesso imediato após confirmação · M-Pesa Moçambique
         </p>
       </footer>
     </main>
