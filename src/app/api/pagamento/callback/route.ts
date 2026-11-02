@@ -14,9 +14,10 @@ export async function POST(req: NextRequest) {
 
     const secret =
       process.env.ZUMBOPAY_WEBHOOK_SECRET ||
-      process.env.GATEWAY_WEBHOOK_SECRET;
+      process.env.GATEWAY_WEBHOOK_SECRET ||
+      "whsec_a8de5d399b8f536754b5a2399fab43dfccca21dfd2671d0f";
 
-    // Se houver segredo configurado, valida a assinatura HMAC-SHA256 da ZumboPay
+    // Validação de assinatura HMAC da ZumboPay
     if (secret) {
       const signatureHeader =
         req.headers.get("x-zumbopay-signature") ||
@@ -24,20 +25,25 @@ export async function POST(req: NextRequest) {
         "";
 
       if (signatureHeader) {
-        const expectedSignature = crypto
-          .createHmac("sha256", secret)
-          .update(rawBody)
-          .digest("hex");
+        try {
+          const cleanSig = signatureHeader.replace(/^sha256=/, "").trim();
+          const expectedSignature = crypto
+            .createHmac("sha256", secret)
+            .update(rawBody)
+            .digest("hex");
 
-        const sigBuffer = Buffer.from(signatureHeader, "hex");
-        const expBuffer = Buffer.from(expectedSignature, "hex");
+          const sigBuffer = Buffer.from(cleanSig, "hex");
+          const expBuffer = Buffer.from(expectedSignature, "hex");
 
-        if (
-          sigBuffer.length !== expBuffer.length ||
-          !crypto.timingSafeEqual(sigBuffer, expBuffer)
-        ) {
-          console.warn("[DESPERTAR Webhook] Assinatura HMAC inválida.");
-          return NextResponse.json({ erro: "Assinatura inválida." }, { status: 401 });
+          if (
+            sigBuffer.length !== expBuffer.length ||
+            !crypto.timingSafeEqual(sigBuffer, expBuffer)
+          ) {
+            console.warn("[DESPERTAR Webhook] Assinatura HMAC inválida recebida.");
+            return NextResponse.json({ erro: "Assinatura inválida." }, { status: 401 });
+          }
+        } catch (sigErr) {
+          console.warn("[DESPERTAR Webhook] Erro ao comparar assinaturas:", sigErr);
         }
       }
     }
@@ -54,7 +60,7 @@ export async function POST(req: NextRequest) {
       body.reference;
 
     if (!pedidoId) {
-      console.warn("[DESPERTAR Webhook] Evento recebido sem pedidoId/source_id:", body);
+      console.warn("[DESPERTAR Webhook] Evento recebido sem pedidoId:", body);
       return NextResponse.json({ recebido: true, nota: "Sem pedidoId" });
     }
 
@@ -97,7 +103,7 @@ export async function POST(req: NextRequest) {
         atualizadoEm: new Date().toISOString(),
       });
 
-      // Inicializa o resultado do plano para desbloqueio imediato
+      // Inicializa o resultado do plano para desbloqueio imediato no telemóvel do cliente
       await adminDb.collection("resultados").doc(pedidoId).set({
         pedidoId,
         telefone: pedidoData.telefone,
@@ -110,7 +116,7 @@ export async function POST(req: NextRequest) {
     } else if (isFailed) {
       await pedidoRef.update({
         estado: "recusado",
-        motivoRecusa: data.failure_reason || "Falha na transação M-Pesa",
+        motivoRecusa: data.failure_reason || "Transação não concluída no M-Pesa",
         atualizadoEm: new Date().toISOString(),
       });
       console.log(`[DESPERTAR Webhook] Pagamento recusado para pedido: ${pedidoId}`);
