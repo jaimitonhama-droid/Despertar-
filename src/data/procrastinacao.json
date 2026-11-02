@@ -1,0 +1,148 @@
+{
+  "id": "procrastinacao",
+  "titulo": "⏰ Procrastinação",
+  "emoji": "⏰",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Qual é a situação em que procrastinas mais?",
+      "opcoes": [
+        { "id": "a", "texto": "No trabalho ou nos estudos — adio tarefas importantes" },
+        { "id": "b", "texto": "Em projectos pessoais e metas que nunca começam" },
+        { "id": "c", "texto": "Em decisões importantes da minha vida" },
+        { "id": "d", "texto": "Em tudo — adio praticamente qualquer coisa difícil" }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "O que mais te faz adiar as tarefas?",
+      "opcoes": [
+        { "id": "a", "texto": "Medo de errar ou de não fazer bem" },
+        { "id": "b", "texto": "A tarefa parece grande demais ou difícil de começar" },
+        { "id": "c", "texto": "Prefiro fazer coisas mais agradáveis primeiro" },
+        { "id": "d", "texto": "Falta de energia, motivação ou clareza sobre o que fazer" }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "Com que frequência não cumprres o que planeaste para o dia?",
+      "opcoes": [
+        { "id": "a", "texto": "Raramente — consigo cumprir a maioria" },
+        { "id": "b", "texto": "Às vezes — cerca de metade do que planejo fica por fazer" },
+        { "id": "c", "texto": "Frequentemente — mais de metade fica por fazer" },
+        { "id": "d", "texto": "Quase sempre — raro o dia em que cumpro o que planeei" }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "Como te sentes quando não cumprres as tuas tarefas?",
+      "opcoes": [
+        { "id": "a", "texto": "Um pouco culpado, mas sigo em frente" },
+        { "id": "b", "texto": "Frustrado comigo mesmo" },
+        { "id": "c", "texto": "Com muita culpa e ansiedade" },
+        { "id": "d", "texto": "Já me habituei — deixei de me surpreender" }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "A procrastinação já te custou oportunidades importantes?",
+      "opcoes": [
+        { "id": "a", "texto": "Não, ainda não tive consequências sérias" },
+        { "id": "b", "texto": "Sim, algumas oportunidades menores passaram" },
+        { "id": "c", "texto": "Sim, oportunidades importantes que ainda me arrependem" },
+        { "id": "d", "texto": "Sim, e sinto que estou atrasado na vida por causa disto" }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Já tentaste criar sistemas ou hábitos para ser mais produtivo?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca tentei de forma séria" },
+        { "id": "b", "texto": "Tentei mas desisti rapidamente" },
+        { "id": "c", "texto": "Tentei várias vezes — listas, apps, alarmes — sem sucesso" },
+        { "id": "d", "texto": "Funciona por alguns dias mas a consistência é o meu maior desafio" }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "Qual é o maior sonho ou meta que a procrastinação está a atrasar?",
+      "opcoes": [
+        { "id": "a", "texto": "Terminar os estudos ou melhorar a minha formação" },
+        { "id": "b", "texto": "Criar um negócio ou projecto pessoal" },
+        { "id": "c", "texto": "Melhorar a minha saúde e forma física" },
+        { "id": "d", "texto": "Construir uma vida financeiramente estável" }
+      ]
+    }
+  ],
+  "plano": {
+    "titulo": "O TEU DESPERTAR: DO ADIAMENTO À ACÇÃO — A TRANSFORMAÇÃO COMEÇA AGORA",
+    "analise_intro": "As tuas respostas revelam algo que a maioria dos procrastinadores não sabe: procrastinar não é preguiça — é frequentemente uma forma de gerir o medo. Medo de falhar, de não ser bom o suficiente, de começar e não terminar. Hoje começas a quebrar esse ciclo.",
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Dia 1 — A Regra dos 2 Minutos",
+        "objetivo": "Quebrar o padrão de inércia com uma técnica simples.",
+        "explicacao": "O maior obstáculo não é a tarefa — é o início. O cérebro resiste ao esforço desconhecido. A Regra dos 2 Minutos diz: se algo demora menos de 2 minutos, faz agora. Se demora mais, começa por apenas 2 minutos.",
+        "tarefa": "Escolhe a tarefa mais adiada da tua lista. Trabalha nela por exactamente 2 minutos. Só 2. Na maioria dos casos, continuarás depois dos 2 minutos. O início é tudo.",
+        "desafio": "Faz 5 tarefas pequenas que adiaste (emails, organizar algo, uma chamada). Sente a satisfação de tirar coisas da lista.",
+        "reflexao": "O que acontece na minha mente nos segundos antes de começar uma tarefa difícil?"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dia 2 — Divide para Conquistar",
+        "objetivo": "Aprender a transformar tarefas grandes em passos pequenos.",
+        "explicacao": "As tarefas parecem enormes porque as vemos como um bloco inteiro. Divididas em passos de 15-20 minutos, tornam-se gerenciáveis.",
+        "tarefa": "Pega na tua maior tarefa pendente. Divide-a em 5 passos específicos e pequenos. Escreve cada passo. Faz apenas o primeiro passo hoje.",
+        "desafio": "Usa a técnica Pomodoro: 25 minutos de foco total, 5 minutos de pausa. Faz 2 Pomodoros hoje numa tarefa importante.",
+        "reflexao": "Quando consigo dividir uma tarefa em partes pequenas, como muda a minha disposição para começar?"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dia 3 — Elimina as Distrações",
+        "objetivo": "Criar um ambiente que favorece o foco.",
+        "explicacao": "Não existe força de vontade que resista a um ambiente cheio de distrações. O teu ambiente precisa de trabalhar a teu favor.",
+        "tarefa": "Durante 1 hora hoje: coloca o telemóvel noutro quarto, fecha abas desnecessárias no computador, diz a quem está perto que não podes ser interrompido. Trabalha. Regista como correu.",
+        "desafio": "Identifica a tua principal fonte de distracção e elimina-a do teu espaço de trabalho durante o dia.",
+        "reflexao": "Que condições físicas e mentais me permitem focar melhor?"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dia 4 — A Energia que Move a Acção",
+        "objetivo": "Usar o corpo para alimentar a mente produtiva.",
+        "explicacao": "Procrastinação frequentemente tem raiz em baixa energia. O exercício físico é um dos antídotos mais poderosos — aumenta dopamina, foco e motivação.",
+        "tarefa": "Faz 20 minutos de exercício físico ANTES de começar as tuas tarefas importantes do dia. Observa a diferença no teu nível de energia e foco.",
+        "desafio": "Vai dormir hoje a uma hora razoável. O cansaço é o maior aliado da procrastinação.",
+        "reflexao": "Qual é a relação entre como cuido do meu corpo e quão produtivo me sinto?"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dia 5 — Compromisso Público",
+        "objetivo": "Usar a responsabilidade social para aumentar a consistência.",
+        "explicacao": "Quando partilhamos uma meta com alguém, a probabilidade de a cumprir aumenta significativamente. O compromisso público activa o sentido de honra e responsabilidade.",
+        "tarefa": "Partilha com um amigo ou familiar UMA coisa que vais concluir hoje. Define a hora. À noite, confirma se cumpriste.",
+        "desafio": "Cria um 'parceiro de responsabilidade' — alguém com quem verificas o progresso semanalmente.",
+        "reflexao": "Como me sinto quando cumpro o que prometi — a mim mesmo e aos outros?"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dia 6 — Celebra o Progresso, Não a Perfeição",
+        "objetivo": "Aprender a reconhecer e valorizar cada avanço.",
+        "explicacao": "Muitos procrastinadores esperam estar 'prontos' ou 'inspirados' para agir. Mas a acção imperfeita é sempre melhor que a inacção perfeita.",
+        "tarefa": "Olha para os últimos 5 dias. Escreve 3 coisas que fizeste que normalmente adiarias. Celebra essas vitórias — são a prova de que podes.",
+        "desafio": "Hoje, termina UMA coisa que começaste e não concluíste. A sensação de terminar algo é um dos melhores motivadores.",
+        "reflexao": "Estou à espera de ser perfeito para agir, ou consigo agir mesmo sendo imperfeito?"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dia 7 — O Sistema que Sustenta a Mudança",
+        "objetivo": "Criar uma rotina de produtividade que persiste além dos 7 dias.",
+        "explicacao": "Chegaste ao Dia 7. A motivação vai e vem — é um sistema que permanece. Hoje constróis o teu.",
+        "tarefa": "Cria o teu 'ritual diário de produtividade': hora de acordar, primeira tarefa do dia, horários de foco, momento de avaliar o dia à noite. Simples, realista, teu.",
+        "desafio": "Começa amanhã com o primeiro dia do teu novo sistema. Não perfectamente — apenas consistentemente.",
+        "reflexao": "Que diferença fará na minha vida daqui a 1 ano se mantiver este sistema?"
+      }
+    ],
+    "mensagem_final": "Tudo que precisas já está na tua mente. O primeiro passo é despertar e começar a agir. A versão mais realizada de ti mesmo está à espera — não de mais tempo, mas de que comeces agora."
+  }
+}
+

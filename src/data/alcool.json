@@ -1,0 +1,148 @@
+{
+  "id": "alcool",
+  "titulo": "🍺 Álcool",
+  "emoji": "🍺",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Com que frequência consomes bebidas alcoólicas?",
+      "opcoes": [
+        { "id": "a", "texto": "Apenas aos fins de semana" },
+        { "id": "b", "texto": "3 a 4 vezes por semana" },
+        { "id": "c", "texto": "Quase todos os dias" },
+        { "id": "d", "texto": "Todos os dias, sem excepção" }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "Em que situações consomes álcool com mais frequência?",
+      "opcoes": [
+        { "id": "a", "texto": "Em convívios sociais e festas" },
+        { "id": "b", "texto": "Para relaxar e lidar com o stress" },
+        { "id": "c", "texto": "Por hábito, já faz parte da rotina" },
+        { "id": "d", "texto": "Para lidar com problemas ou emoções difíceis" }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "Como te sentes no dia seguinte após consumir álcool em excesso?",
+      "opcoes": [
+        { "id": "a", "texto": "Um pouco cansado mas normal" },
+        { "id": "b", "texto": "Com ressaca frequente — dores de cabeça, mal-estar" },
+        { "id": "c", "texto": "Com culpa e arrependimento das coisas que fiz ou disse" },
+        { "id": "d", "texto": "Sem me lembrar de partes do que aconteceu" }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "O consumo de álcool já afectou o teu desempenho no trabalho, escola ou vida familiar?",
+      "opcoes": [
+        { "id": "a", "texto": "Não, consigo gerir bem" },
+        { "id": "b", "texto": "Às vezes chego atrasado ou menos produtivo" },
+        { "id": "c", "texto": "Já perdi oportunidades ou criei problemas por causa disto" },
+        { "id": "d", "texto": "Sim, afectou seriamente a minha vida" }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "Já tentaste parar ou reduzir o consumo e sentiste sintomas físicos como tremores, suores ou ansiedade intensa?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca tentei parar" },
+        { "id": "b", "texto": "Tentei e não senti sintomas físicos" },
+        { "id": "c", "texto": "Senti algum desconforto quando tentei parar" },
+        { "id": "d", "texto": "Sim, senti sintomas físicos quando tentei parar" }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Pessoas próximas já expressaram preocupação com o teu consumo de álcool?",
+      "opcoes": [
+        { "id": "a", "texto": "Não, ninguém comentou" },
+        { "id": "b", "texto": "Sim, uma ou duas vezes de forma leve" },
+        { "id": "c", "texto": "Sim, com preocupação séria" },
+        { "id": "d", "texto": "Sim, e isso já causou conflitos sérios" }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "O que te motiva mais a querer reduzir ou parar o consumo?",
+      "opcoes": [
+        { "id": "a", "texto": "Quero ter mais saúde e energia" },
+        { "id": "b", "texto": "Quero melhorar as minhas relações e recuperar confiança" },
+        { "id": "c", "texto": "Quero ser um exemplo melhor para a minha família" },
+        { "id": "d", "texto": "Quero retomar o controlo da minha vida" }
+      ]
+    }
+  ],
+  "plano": {
+    "titulo": "O TEU DESPERTAR: RECUPERANDO A CLAREZA E O CONTROLO",
+    "analise_intro": "As tuas respostas mostram que o álcool deixou de ser uma escolha ocasional e tornou-se um padrão que ocupa espaço na tua vida — nas tuas manhãs, nas tuas relações e na tua energia. Reconhecer isto não é fraqueza. É o acto mais corajoso que podes fazer por ti mesmo.",
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Dia 1 — A Decisão Mais Importante",
+        "objetivo": "Comprometer-te com uma mudança gradual e segura.",
+        "explicacao": "AVISO IMPORTANTE: Se bebes diariamente há muito tempo e sentiste sintomas físicos quando tentaste parar (tremores, suores intensos, convulsões), a interrupção abrupta pode ser perigosa. Nesse caso, recomendamos vivamente que consultes um profissional de saúde antes de parar. Este plano é para redução gradual e mudança de hábitos.",
+        "tarefa": "Define hoje a tua meta: reduzir gradualmente ou parar completamente. Escreve-a. Se o teu consumo é muito elevado, opta por redução gradual. Se é moderado, podes definir um prazo para parar.",
+        "desafio": "Hoje, reduze o consumo em pelo menos 50% do que seria habitual. Se não consomes hoje, excelente.",
+        "reflexao": "Que versão de mim mesmo emerge quando estou completamente sóbrio e presente?"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dia 2 — Identifica os Gatilhos",
+        "objetivo": "Compreender o que desencadeia o desejo de beber.",
+        "explicacao": "O álcool raramente é o problema em si — é a resposta a algo. Stress, solidão, tédio, pressão social. Hoje descobres a raiz.",
+        "tarefa": "Escreve as 3 situações em que tens mais vontade de beber. O que estás a sentir antes? O que estás a tentar evitar ou conseguir? Identificar o gatilho é metade da solução.",
+        "desafio": "Quando sentires vontade de beber hoje, espera 15 minutos antes de agir. Nesse tempo, bebe água, caminha ou respira fundo. Na maioria dos casos, a vontade passa.",
+        "reflexao": "O que é que o álcool me dá que eu poderia encontrar noutro lugar?"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dia 3 — Substitui o Ritual",
+        "objetivo": "Encontrar alternativas para os momentos de consumo.",
+        "explicacao": "Muitas vezes não é o álcool que queremos — é o ritual: o copo na mão, o momento de descontracção, o convívio. Hoje criamos novos rituais.",
+        "tarefa": "Identifica o teu momento habitual de consumo (ex.: à noite, depois do trabalho, com amigos) e cria uma alternativa: chá quente, sumo natural, água com limão. O ritual permanece, o álcool sai.",
+        "desafio": "Convida alguém para uma actividade social que não envolva álcool — futebol, caminhada, refeição em casa.",
+        "reflexao": "Que momentos de prazer real posso criar que não dependem do álcool?"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dia 4 — Sente o Corpo Acordar",
+        "objetivo": "Reconhecer as melhorias físicas que a redução já está a trazer.",
+        "explicacao": "O corpo humano começa a recuperar rapidamente quando o álcool é reduzido. Mais clareza mental, melhor sono, mais energia. Hoje observas estas mudanças.",
+        "tarefa": "Regista como te sentes hoje comparado com o início da semana: energia, sono, humor, clareza. Escreve as diferenças que já notas — mesmo que pequenas.",
+        "desafio": "Faz exercício físico hoje — qualquer coisa que acelere o coração durante 20 minutos. O corpo que se mexe não precisa de álcool para se sentir bem.",
+        "reflexao": "Como se sente o meu corpo quando está limpo e descansado?"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dia 5 — Lida com a Pressão Social",
+        "objetivo": "Aprender a dizer não sem se sentir excluído.",
+        "explicacao": "Um dos maiores obstáculos para parar é a pressão do grupo. Em Moçambique, recusar um copo pode parecer uma ofensa. Mas a tua saúde vem primeiro.",
+        "tarefa": "Pratica respostas simples para quando te oferecerem álcool: 'Estou bem com água, obrigado.' 'Estou a cuidar da saúde.' 'Não bebo hoje.' Não precisas de explicações longas. A simplicidade tem força.",
+        "desafio": "Se tiveres um convívio esta semana, vai sóbrio e fica sóbrio. Observa a noite com clareza total.",
+        "reflexao": "Os meus amigos verdadeiros respeitam as minhas escolhas de saúde?"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dia 6 — Reconstrói o Que o Álcool Danificou",
+        "objetivo": "Tomar acções concretas para reparar relações e confiança.",
+        "explicacao": "O álcool frequentemente deixa rastros — palavras ditas, compromissos quebrados, confiança abalada. Não podes mudar o passado, mas podes começar a construir diferente.",
+        "tarefa": "Pensa numa relação ou situação que o teu consumo de álcool afectou. Que passo concreto podes dar hoje para começar a reparar? Uma conversa, um pedido de desculpa, uma promessa cumprida.",
+        "desafio": "Passa o dia inteiro completamente sóbrio e consciente. Regista como este dia se sente diferente.",
+        "reflexao": "Quem me tornei quando estou sóbrio e presente para as pessoas que amo?"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dia 7 — A Vida Sóbria é Mais Rica",
+        "objetivo": "Celebrar os 7 dias e comprometer com o caminho adiante.",
+        "explicacao": "Chegaste ao Dia 7. Independentemente do que aconteceu nesta semana, o facto de estares aqui prova que queres mudar. E querer mudar já é mudar.",
+        "tarefa": "Escreve 5 benefícios que notaste nesta semana — por pequenos que sejam. Guarda esta lista e lê quando a vontade voltar.",
+        "desafio": "Celebra os teus 7 dias de forma saudável: uma refeição especial, um momento de descanso, uma actividade que gostas. Sem álcool.",
+        "reflexao": "Que vida quero viver — e é essa vida que estou a construir?"
+      }
+    ],
+    "mensagem_final": "Tudo que precisas já está na tua mente. O primeiro passo é despertar e começar a agir. A tua vida mais clara, mais rica e mais livre começa aqui."
+  }
+}
+

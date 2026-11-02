@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --azul: #101B32;
+  --dourado: #F4C542;
+  --fundo: #0A0F1E;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  background-color: #0A0F1E;
+  color: #FFFFFF;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Scroll suave e toque fluido no telemóvel */
+button {
+  user-select: none;
+  -webkit-user-select: none;
+}

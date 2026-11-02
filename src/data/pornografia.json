@@ -1,0 +1,148 @@
+{
+  "id": "pornografia",
+  "titulo": "🔞 Pornografia",
+  "emoji": "🔞",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Há quanto tempo consomes pornografia com regularidade?",
+      "opcoes": [
+        { "id": "a", "texto": "Há menos de 6 meses" },
+        { "id": "b", "texto": "Há 1 a 2 anos" },
+        { "id": "c", "texto": "Há 3 a 5 anos" },
+        { "id": "d", "texto": "Há mais de 5 anos" }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "Com que frequência consomes pornografia durante a semana?",
+      "opcoes": [
+        { "id": "a", "texto": "1 a 2 vezes por semana" },
+        { "id": "b", "texto": "3 a 4 vezes por semana" },
+        { "id": "c", "texto": "Todos os dias" },
+        { "id": "d", "texto": "Várias vezes por dia" }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "Em que momentos costumas sentir mais vontade de consumir pornografia?",
+      "opcoes": [
+        { "id": "a", "texto": "Quando estou entediado ou sozinho" },
+        { "id": "b", "texto": "Quando estou stressado ou ansioso" },
+        { "id": "c", "texto": "À noite, antes de dormir" },
+        { "id": "d", "texto": "Em qualquer momento, sem razão específica" }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "Como este hábito afeta a tua produtividade e rotina diária?",
+      "opcoes": [
+        { "id": "a", "texto": "Pouco — consigo manter as minhas obrigações" },
+        { "id": "b", "texto": "Médio — às vezes atraso tarefas por causa disto" },
+        { "id": "c", "texto": "Muito — perco horas que deveria usar em coisas importantes" },
+        { "id": "d", "texto": "Extremamente — sinto que controla a minha vida" }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "Como este hábito está a afetar os teus relacionamentos e a forma como vês as pessoas?",
+      "opcoes": [
+        { "id": "a", "texto": "Não sinto impacto nos meus relacionamentos" },
+        { "id": "b", "texto": "Sinto alguma dificuldade em relacionamentos reais" },
+        { "id": "c", "texto": "Tenho menos interesse em relacionamentos afetivos verdadeiros" },
+        { "id": "d", "texto": "Sinto que este hábito criou uma visão distorcida sobre o outro género" }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Já tentaste parar ou reduzir o consumo de pornografia antes?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca tentei seriamente" },
+        { "id": "b", "texto": "Tentei mas durei apenas alguns dias" },
+        { "id": "c", "texto": "Tentei várias vezes, sem sucesso duradouro" },
+        { "id": "d", "texto": "Consegui parar por algum tempo mas voltei" }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "Qual é o teu nível de motivação para mudar este hábito agora?",
+      "opcoes": [
+        { "id": "a", "texto": "Estou curioso, mas ainda inseguro" },
+        { "id": "b", "texto": "Quero mudar, mas tenho medo de não conseguir" },
+        { "id": "c", "texto": "Estou decidido a tentar" },
+        { "id": "d", "texto": "Estou totalmente comprometido, preciso de mudar agora" }
+      ]
+    }
+  ],
+  "plano": {
+    "titulo": "O TEU DESPERTAR: QUEBRANDO AS CORRENTES DA PORNOGRAFIA",
+    "analise_intro": "As tuas respostas revelam um padrão que muitos jovens enfrentam em silêncio. O consumo de pornografia começa como algo aparentemente inofensivo, mas com o tempo transforma-se numa âncora que prende a mente, distorce as emoções e rouba horas preciosas da tua vida.",
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Dia 1 — Enfrenta a Verdade",
+        "objetivo": "Compreender o padrão e aceitar a necessidade de mudar.",
+        "explicacao": "Antes de mudar qualquer coisa, precisas de ver claramente o que este hábito te tem custado. Não para te julgares, mas para tomares uma decisão consciente.",
+        "tarefa": "Escreve num papel três coisas que este hábito já te tirou — tempo, energia, autoestima ou outra coisa. Guarda esse papel como lembrança do porquê estás a mudar.",
+        "desafio": "Durante 24 horas, sempre que sentires vontade de consumir pornografia, bebe um copo de água e faz 10 flexões ou caminha 5 minutos.",
+        "reflexao": "Pergunta a ti mesmo antes de dormir: Que tipo de homem/mulher quero ser daqui a um ano?"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dia 2 — Identifica os Gatilhos",
+        "objetivo": "Mapear os momentos de vulnerabilidade.",
+        "explicacao": "Não és fraco. O teu cérebro foi condicionado a responder a determinados momentos com um comportamento automático. Hoje vamos identificar esses momentos.",
+        "tarefa": "Durante o dia, anota mentalmente (ou num papel) cada vez que sentiste vontade. Que horas eram? Estavas sozinho? O que fazias antes? Estes são os teus gatilhos.",
+        "desafio": "Coloca o telemóvel carregando fora do quarto esta noite. Dorme sem ele.",
+        "reflexao": "Qual dos meus momentos de fraqueza posso eliminar ou substituir por outra actividade?"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dia 3 — Cria Barreiras Físicas",
+        "objetivo": "Dificultar o acesso ao conteúdo prejudicial.",
+        "explicacao": "A disciplina é mais fácil quando o ambiente trabalha a teu favor. Hoje tornamos o teu espaço digital num aliado.",
+        "tarefa": "Instala um bloqueador de sites no teu telemóvel (ex.: BlockSite ou Pluckeye). Ativa o filtro SafeSearch no Google. Apaga apps ou pastas que te expõem a conteúdo tentador.",
+        "desafio": "Passa pelo menos 30 minutos ao ar livre, longe do telemóvel.",
+        "reflexao": "O meu ambiente digital reflecte a pessoa que quero ser?"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dia 4 — Substitui com Energia Real",
+        "objetivo": "Direccionar a energia para actividades que constroem.",
+        "explicacao": "A tua mente precisa de estímulo. Em vez de suprimir, substitui. Canais essa energia para algo que te faz crescer.",
+        "tarefa": "Escolhe uma actividade física para fazer hoje: correr, futebol, flexões, natação. Faz pelo menos 20 minutos. Sente a diferença que o corpo activo faz no estado mental.",
+        "desafio": "Contacta um amigo ou familiar de quem gostas e passa tempo de qualidade com ele, presencialmente ou por chamada.",
+        "reflexao": "Que versão de mim mesmo aparece quando estou activo e presente no mundo real?"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dia 5 — Gestão das Recaídas",
+        "objetivo": "Aprender a lidar com falhas sem desistir.",
+        "explicacao": "Uma recaída não é o fim do caminho. É informação. Hoje preparamos a tua mente para não dramatizar se algo correr mal, mas para levantar e continuar.",
+        "tarefa": "Escreve um plano de emergência de 3 passos para usar quando sentires vontade intensa: 1) Sai do espaço físico onde estás. 2) Faz algo físico por 5 minutos. 3) Chama alguém ou ouve música que te motive.",
+        "desafio": "Passa o dia inteiro sem redes sociais. Observa como te sentes.",
+        "reflexao": "Sei reconhecer a diferença entre uma recaída e uma derrota definitiva?"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dia 6 — Reconstrói a Tua Identidade",
+        "objetivo": "Criar uma visão clara de quem estás a tornar-te.",
+        "explicacao": "A mudança mais poderosa acontece quando deixas de te ver como alguém que está a tentar parar, e passas a ver-te como alguém que já é diferente.",
+        "tarefa": "Escreve numa folha: Eu sou uma pessoa disciplinada. Eu controlo os meus impulsos. Eu escolho o meu futuro. Coloca em sítio visível e lê em voz alta de manhã e à noite.",
+        "desafio": "Faz uma coisa que sempre adiaste por falta de tempo ou energia. Comprova que tens mais capacidade do que pensas.",
+        "reflexao": "Quem sou eu quando estou no meu melhor estado?"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dia 7 — O Início de Uma Nova Versão",
+        "objetivo": "Consolidar o progresso e criar um plano de longo prazo.",
+        "explicacao": "Chegaste ao fim dos 7 dias. Isso não é o fim — é o início. Provaste que consegues. Agora é preciso construir sobre esta base.",
+        "tarefa": "Escreve uma carta para ti mesmo daqui a 30 dias, descrevendo a pessoa que queres ser. Guarda e relê no dia 30.",
+        "desafio": "Partilha a tua decisão de mudar com pelo menos uma pessoa de confiança. O compromisso público reforça o compromisso interno.",
+        "reflexao": "O que mudou em mim nestes 7 dias? O que ainda preciso de trabalhar?"
+      }
+    ],
+    "mensagem_final": "Tudo que precisas já está na tua mente. O primeiro passo é despertar e começar a agir. Chegaste até aqui — isso significa que já és diferente da pessoa que começou esta jornada."
+  }
+}
+

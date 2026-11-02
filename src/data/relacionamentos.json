@@ -1,0 +1,148 @@
+{
+  "id": "relacionamentos",
+  "titulo": "❤️ Relacionamentos Tóxicos",
+  "emoji": "❤️",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Há quanto tempo estás neste relacionamento ou padrão relacional que te prejudica?",
+      "opcoes": [
+        { "id": "a", "texto": "Menos de 6 meses" },
+        { "id": "b", "texto": "Entre 6 meses e 1 ano" },
+        { "id": "c", "texto": "Entre 1 e 3 anos" },
+        { "id": "d", "texto": "Mais de 3 anos" }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "Como te sentes com mais frequência nesta relação?",
+      "opcoes": [
+        { "id": "a", "texto": "Ansioso e sempre a tentar agrada o outro" },
+        { "id": "b", "texto": "Desrespeitado ou diminuído" },
+        { "id": "c", "texto": "Preso, sem conseguir sair" },
+        { "id": "d", "texto": "Confuso, não sei se é amor ou dependência" }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "O que mais te mantém neste relacionamento mesmo quando sabes que te faz mal?",
+      "opcoes": [
+        { "id": "a", "texto": "Medo de ficar sozinho" },
+        { "id": "b", "texto": "Esperança de que a pessoa vai mudar" },
+        { "id": "c", "texto": "Sentimento de culpa ou responsabilidade" },
+        { "id": "d", "texto": "Dependência emocional, não consigo imaginar sem ela/ele" }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "Como este relacionamento afecta a tua vida fora da relação?",
+      "opcoes": [
+        { "id": "a", "texto": "Afastei-me de amigos ou família por causa desta relação" },
+        { "id": "b", "texto": "O meu desempenho no trabalho ou estudo piorou" },
+        { "id": "c", "texto": "Perdi a confiança em mim mesmo" },
+        { "id": "d", "texto": "Todas as opções acima" }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "Já houve episódios de controlo, manipulação, humilhação ou agressão nesta relação?",
+      "opcoes": [
+        { "id": "a", "texto": "Não, mas há muita tensão e desequilíbrio" },
+        { "id": "b", "texto": "Sim, verbal ou emocional" },
+        { "id": "c", "texto": "Sim, situações que me deixaram com medo" },
+        { "id": "d", "texto": "Prefiro não responder" }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Já tentaste distanciar-te ou terminar esta relação antes?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca tive coragem de tentar" },
+        { "id": "b", "texto": "Tentei mas voltei por pressão ou culpa" },
+        { "id": "c", "texto": "Terminei várias vezes mas sempre voltamos" },
+        { "id": "d", "texto": "Já terminei mas ainda sinto que não me libertei" }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "O que esperas construir depois de te libertares deste padrão?",
+      "opcoes": [
+        { "id": "a", "texto": "Quero recuperar a minha autoconfiança e paz" },
+        { "id": "b", "texto": "Quero aprender a construir relações saudáveis" },
+        { "id": "c", "texto": "Quero focar em mim e nos meus objectivos" },
+        { "id": "d", "texto": "Quero reconectar com as pessoas que afastei" }
+      ]
+    }
+  ],
+  "plano": {
+    "titulo": "O TEU DESPERTAR: LIBERTANDO-TE DOS PADRÕES QUE TE PRENDERAM",
+    "analise_intro": "As tuas respostas revelam algo que exige muita coragem para admitir: estás numa dinâmica relacional que te consome mais do que te alimenta. Isso não significa que és fraco ou que não sabes amar. Significa que aprendeste a dar mais do que recebes — e chegou a hora de reaprender o teu valor.",
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Dia 1 — Nomeia o Que Sentes",
+        "objetivo": "Dar nome às emoções sem as julgar.",
+        "explicacao": "Muitas pessoas ficam presas em relações tóxicas porque nunca param para nomear o que realmente sentem, longe da pressão do outro.",
+        "tarefa": "Escreve numa folha as três emoções que mais sentes quando pensas nesta relação. Não filtes. Não justifiques. Apenas escreve o que é verdade para ti.",
+        "desafio": "Passa hoje sem enviar mensagem ou contactar a pessoa — nem que seja apenas por 24 horas. Observa o que sentes.",
+        "reflexao": "Se eu fosse meu melhor amigo, o que me aconselharia sobre esta situação?"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dia 2 — Recupera as Tuas Fronteiras",
+        "objetivo": "Compreender o que é uma fronteira saudável.",
+        "explicacao": "Fronteiras não são muros. São acordos que proteges com as pessoas que amas — incluindo tu mesmo. Quando não tens fronteiras, o outro decide quem és.",
+        "tarefa": "Escreve 3 coisas que não estás disposto a tolerar numa relação. Exemplos: ser humilhado, ser ignorado, ser controlado. Escreve como se fossem leis para a tua vida.",
+        "desafio": "Pratica dizer 'não' em algo pequeno hoje — com um amigo, colega ou familiar — sem explicar nem pedir desculpa.",
+        "reflexao": "Quais são as fronteiras que abandonei por medo de perder alguém?"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dia 3 — Reconecta com o Teu Círculo",
+        "objetivo": "Reconstruir as relações que a toxicidade danificou.",
+        "explicacao": "Relações tóxicas frequentemente isolam. O outro torna-se o mundo inteiro, e tudo fora dessa relação desvane. Hoje começas a reconstruir.",
+        "tarefa": "Contacta uma pessoa — amigo ou familiar — de quem te afastaste nos últimos meses. Não precisas de explicar nada. Apenas reconecta.",
+        "desafio": "Passa tempo de qualidade com alguém que genuinamente te faz bem, sem falar sobre a relação que queres superar.",
+        "reflexao": "Quem são as pessoas na minha vida que me fazem sentir mais eu mesmo?"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dia 4 — Investe em Ti Mesmo",
+        "objetivo": "Reconstruir a autoestima e o sentido próprio.",
+        "explicacao": "Quando uma relação nos consome, perdemos o fio condutor de quem somos fora dela. Hoje começas a encontrá-lo.",
+        "tarefa": "Faz uma coisa hoje que fazes apenas para ti — não para impressionar ninguém, não por obrigação. Pode ser exercício, uma comida que gostas, música, um passeio, um livro.",
+        "desafio": "Olha ao espelho e diz em voz alta três qualidades genuínas que tens. Pode parecer estranho. Faz mesmo assim.",
+        "reflexao": "Quem era eu antes desta relação? O que gostava? O que sonhava?"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dia 5 — Compreende o Padrão",
+        "objetivo": "Perceber por que caímos em relações que nos prejudicam.",
+        "explicacao": "Relações tóxicas raramente são acidente. Frequentemente repetimos padrões aprendidos. Compreendê-los não é para culpar ninguém — é para não os repetir.",
+        "tarefa": "Reflecte: já viveste este tipo de dinâmica antes? Com quem? Há um padrão nas relações que escolhes? Escreve sem julgamento.",
+        "desafio": "Faz algo criativo hoje: desenha, escreve, cozinha, dança. Canaliza as emoções de forma construtiva.",
+        "reflexao": "O que aprendi sobre mim mesmo através desta relação difícil?"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dia 6 — Define o Teu Futuro Relacional",
+        "objetivo": "Criar uma visão clara do que queres nas relações.",
+        "explicacao": "Não basta sair de uma relação tóxica — precisas de saber para onde vais. Hoje defines o que procuras e o que mereces.",
+        "tarefa": "Escreve como seria uma relação verdadeiramente saudável para ti. Não o que é perfeito — mas o que é respeitoso, equilibrado e genuíno. Guarda isso.",
+        "desafio": "Identifica uma qualidade tua que uma relação saudável reconheceria e valorizaria. Cultiva-a hoje.",
+        "reflexao": "Mereço uma relação onde me sinto seguro, respeitado e amado — sem dúvida?"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dia 7 — O Amor que Começa em Ti",
+        "objetivo": "Consolidar o autoconhecimento e o compromisso com o teu bem-estar.",
+        "explicacao": "Chegaste ao Dia 7. Atravessaste sete dias a olhar para dentro — isso exige coragem. A relação mais importante da tua vida é a que tens contigo mesmo.",
+        "tarefa": "Escreve uma carta a ti mesmo, do futuro — de alguém que saiu deste padrão e construiu algo melhor. O que esse tu futuro diria ao tu de hoje?",
+        "desafio": "Compromete-te com um passo concreto esta semana para proteger o teu bem-estar emocional.",
+        "reflexao": "Que relação quero ter comigo mesmo daqui a um ano?"
+      }
+    ],
+    "mensagem_final": "Tudo que precisas já está na tua mente. O primeiro passo é despertar e começar a agir. Mereces amor que não te custa a paz."
+  }
+}
+

@@ -1,0 +1,148 @@
+{
+  "id": "comparacao_redes",
+  "titulo": "👀 Comparação nas Redes Sociais",
+  "emoji": "👀",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Com que frequência te sentes inferiorizado ao ver as vidas dos outros nas redes sociais?",
+      "opcoes": [
+        { "id": "a", "texto": "Raramente — consigo ver sem me comparar" },
+        { "id": "b", "texto": "Às vezes — alguns perfis ou publicações me afectam" },
+        { "id": "c", "texto": "Frequentemente — quase sempre me comparo" },
+        { "id": "d", "texto": "Sempre — as redes sociais fazem-me sentir menos" }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "O que mais te afecta quando vês as redes sociais?",
+      "opcoes": [
+        { "id": "a", "texto": "Ver outros com mais dinheiro, bens ou viagens" },
+        { "id": "b", "texto": "Ver corpos, aparências ou estilos que não tenho" },
+        { "id": "c", "texto": "Ver outros com mais sucesso profissional ou académico" },
+        { "id": "d", "texto": "Ver outros com relacionamentos que parecem perfeitos" }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "Como te sentes depois de passar muito tempo nas redes sociais?",
+      "opcoes": [
+        { "id": "a", "texto": "Normal — não sinto grande impacto" },
+        { "id": "b", "texto": "Ligeiramente triste ou insatisfeito com a minha vida" },
+        { "id": "c", "texto": "Desmotivado e com baixa autoestima" },
+        { "id": "d", "texto": "Ansioso, invejoso ou profundamente insatisfeito" }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "A comparação nas redes sociais já te impediu de agir nos teus próprios objectivos?",
+      "opcoes": [
+        { "id": "a", "texto": "Não, ainda consigo focar nos meus objectivos" },
+        { "id": "b", "texto": "Às vezes perco tempo e energia com isso" },
+        { "id": "c", "texto": "Sim, frequentemente sinto que não vale a pena tentar" },
+        { "id": "d", "texto": "Sim, já desisti de coisas por achar que nunca serei bom suficiente" }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "Quando publicas algo nas redes sociais, o que mais te preocupa?",
+      "opcoes": [
+        { "id": "a", "texto": "Não me preocupo muito com a reacção dos outros" },
+        { "id": "b", "texto": "Quero que as pessoas gostem e comentem" },
+        { "id": "c", "texto": "Fico ansioso se não recebo a atenção que esperava" },
+        { "id": "d", "texto": "Às vezes não publico por medo de julgamento" }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Já tentaste usar as redes sociais de forma mais consciente ou reduzir o tempo?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca tentei seriamente" },
+        { "id": "b", "texto": "Tentei reduzir mas voltei ao mesmo" },
+        { "id": "c", "texto": "Tentei várias vezes sem sucesso" },
+        { "id": "d", "texto": "Consigo por algum tempo mas a comparação volta" }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "O que mais gostarias de sentir em relação à tua própria vida?",
+      "opcoes": [
+        { "id": "a", "texto": "Gratidão pelo que tenho" },
+        { "id": "b", "texto": "Confiança na minha própria jornada" },
+        { "id": "c", "texto": "Foco nos meus objectivos sem olhar para os outros" },
+        { "id": "d", "texto": "Paz — sem precisar de validação de mais ninguém" }
+      ]
+    }
+  ],
+  "plano": {
+    "titulo": "O TEU DESPERTAR: PARANDO DE VIVER A VIDA DOS OUTROS E COMEÇANDO A VIVER A TUA",
+    "analise_intro": "As tuas respostas mostram uma realidade que afecta milhões de jovens em todo o mundo, incluindo Moçambique: as redes sociais transformaram-se num espelho distorcido onde vemos apenas os melhores momentos da vida dos outros — e comparamos com os nossos piores. Essa comparação é injusta, desequilibrada e profundamente prejudicial para o teu crescimento.",
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Dia 1 — Compreende a Ilusão",
+        "objetivo": "Ver as redes sociais pelo que realmente são.",
+        "explicacao": "O que vês nas redes sociais é um resumo curado, editado e filtrado da vida de alguém. Ninguém publica as dívidas, as falhas, as noites a chorar. Estás a comparar o teu interior com o exterior dos outros.",
+        "tarefa": "Escolhe 3 perfis que mais te fazem sentir menos. Para cada um, escreve: 'Eu só vejo o que eles mostram — não a vida real deles.' Faz este exercício de perspectiva com honestidade.",
+        "desafio": "Hoje, quando abrires as redes sociais e sentires comparação, fecha a app. Não consumas de forma passiva.",
+        "reflexao": "Se eu visse o lado mais difícil da vida das pessoas que invejo, mudaria a minha perspectiva?"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dia 2 — Faz uma Dieta Digital",
+        "objetivo": "Reduzir a exposição para quebrar o ciclo.",
+        "explicacao": "Tal como uma dieta alimentar, uma dieta digital requer que removas o que te prejudica. Não para sempre — apenas para recuperar o teu centro.",
+        "tarefa": "Remove ou silencia pelo menos 5 contas que te causam comparação negativa. Segue em vez disso 3 contas que te inspiram a agir (educação, empreendedorismo, saúde, arte).",
+        "desafio": "Limita as redes sociais a 30 minutos totais hoje. Usa um temporizador. Quando acabar, fecha.",
+        "reflexao": "Como me sinto quando passo menos tempo nas redes sociais?"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dia 3 — A Tua Jornada Única",
+        "objetivo": "Reconhecer o valor da tua própria história.",
+        "explicacao": "Ninguém começou a partir do mesmo ponto que tu. Ninguém tem os teus desafios, o teu contexto, o teu passado. A tua jornada não pode ser comparada — é única.",
+        "tarefa": "Escreve 5 coisas que superas-te ou conquistaste na tua vida, por menores que pareçam. Não compares com os outros. Vê apenas o teu próprio progresso.",
+        "desafio": "Passa o dia inteiro sem abrir redes sociais. Observa como te sentes — mais ou menos ansioso? Mais ou menos presente?",
+        "reflexao": "Quem sou eu quando não estou a comparar-me com ninguém?"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dia 4 — Gratidão como Antídoto",
+        "objetivo": "Treinar o cérebro para ver o que tens, não o que falta.",
+        "explicacao": "A comparação foca no que falta. A gratidão foca no que existe. São dois modos opostos do cérebro — e podes treinar o segundo.",
+        "tarefa": "Escreve 10 coisas pelas quais és grato HOJE. Não coisas grandes — coisas simples: ter comido, ter saúde, ter alguém que se importa contigo. Faz isto diariamente durante o resto da semana.",
+        "desafio": "Contacta alguém da tua vida que admiras genuinamente e diz-lhe algo positivo. Pratica dar em vez de comparar.",
+        "reflexao": "Quando olho para a minha vida com gratidão, o que vejo que normalmente ignoro?"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dia 5 — Foca na Construção, Não na Comparação",
+        "objetivo": "Redirecionar a energia da comparação para a acção.",
+        "explicacao": "Cada minuto a comparar é um minuto que não investes em ti. A energia da comparação é real — o problema é a direcção onde está apontada.",
+        "tarefa": "Define UMA meta concreta para os próximos 30 dias. Escreve o que precisas de fazer esta semana para avançar. Foca nessa meta — não no que os outros estão a fazer.",
+        "desafio": "Começa um pequeno projecto pessoal hoje — mesmo que seja apenas a ideia inicial. O teu foco passa do exterior para o teu próprio crescimento.",
+        "reflexao": "Se eu usasse a energia que gasto a comparar para construir, onde estaria daqui a 6 meses?"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dia 6 — Usa as Redes Sociais com Propósito",
+        "objetivo": "Transformar as redes sociais de inimigo em ferramenta.",
+        "explicacao": "As redes sociais não são más em si mesmas. São más quando as usamos passivamente, para comparar e consumir sem propósito. Usadas com intenção, podem ser ferramentas poderosas.",
+        "tarefa": "Define para que queres usar as redes sociais: aprender, conectar com pessoas específicas, promover algo teu. Tudo fora desse propósito é ruído. Aplica hoje.",
+        "desafio": "Publica algo genuíno e honesto sobre a tua jornada — sem filtros, sem performance. Vê como te sentes.",
+        "reflexao": "As redes sociais estão a servir os meus objectivos ou a servir-se de mim?"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dia 7 — Vive a Tua Própria História",
+        "objetivo": "Comprometer-te a ser o protagonista da tua vida.",
+        "explicacao": "Chegaste ao Dia 7. Durante esta semana fizeste algo que a maioria das pessoas nunca faz: paraste de olhar para fora e começaste a olhar para dentro. Isso é raro. Isso é coragem.",
+        "tarefa": "Escreve a versão da tua vida daqui a 2 anos — sem comparar com ninguém. Onde estás? O que fazes? Como te sentes? Essa é a tua história. Essa é a que importa.",
+        "desafio": "Compromete-te a verificar as tuas redes sociais apenas 2 vezes por dia, com intenção. Não mais scroll infinito.",
+        "reflexao": "Que história quero viver — a minha, ou a que imagino que os outros têm?"
+      }
+    ],
+    "mensagem_final": "Tudo que precisas já está na tua mente. O primeiro passo é despertar e começar a agir. A tua jornada não precisa de likes para ser extraordinária."
+  }
+}
+

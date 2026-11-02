@@ -1,0 +1,148 @@
+{
+  "id": "aviator_apostas",
+  "titulo": "✈️ Aviator / Apostas",
+  "emoji": "✈️",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Com que frequência apostas ou jogas Aviator / jogos de azar?",
+      "opcoes": [
+        { "id": "a", "texto": "Algumas vezes por semana" },
+        { "id": "b", "texto": "Todos os dias" },
+        { "id": "c", "texto": "Várias vezes por dia" },
+        { "id": "d", "texto": "Sempre que tenho dinheiro disponível" }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "Qual é, em média, o montante que gastas nas apostas por mês?",
+      "opcoes": [
+        { "id": "a", "texto": "Menos de 500 MT" },
+        { "id": "b", "texto": "Entre 500 MT e 2.000 MT" },
+        { "id": "c", "texto": "Entre 2.000 MT e 5.000 MT" },
+        { "id": "d", "texto": "Mais de 5.000 MT" }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "Já apostaste dinheiro que era para outras necessidades (alimentação, renda, escola)?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca" },
+        { "id": "b", "texto": "Aconteceu uma ou duas vezes" },
+        { "id": "c", "texto": "Acontece com alguma frequência" },
+        { "id": "d", "texto": "Acontece regularmente" }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "Quando perdes, o que fazes normalmente?",
+      "opcoes": [
+        { "id": "a", "texto": "Aceito a perda e paro" },
+        { "id": "b", "texto": "Fico chateado mas paro" },
+        { "id": "c", "texto": "Tento recuperar logo com outra aposta" },
+        { "id": "d", "texto": "Fico a apostar até recuperar ou ficar sem dinheiro" }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "As apostas já causaram problemas nas tuas relações familiares, de amizade ou afetivas?",
+      "opcoes": [
+        { "id": "a", "texto": "Não, ninguém sabe que aposto" },
+        { "id": "b", "texto": "Houve alguma tensão mas foi resolvida" },
+        { "id": "c", "texto": "Sim, já causou conflitos sérios" },
+        { "id": "d", "texto": "Sim, afastou pessoas importantes da minha vida" }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Já tentaste parar de apostar antes?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca tentei seriamente" },
+        { "id": "b", "texto": "Tentei mas voltei em poucos dias" },
+        { "id": "c", "texto": "Tentei várias vezes sem conseguir" },
+        { "id": "d", "texto": "Fui de detox mas voltei quando tive dinheiro" }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "O que mais te motiva a querer parar agora?",
+      "opcoes": [
+        { "id": "a", "texto": "Quero parar de perder dinheiro" },
+        { "id": "b", "texto": "Quero recuperar a confiança da minha família" },
+        { "id": "c", "texto": "Sinto que estou a perder o controlo da minha vida" },
+        { "id": "d", "texto": "Quero construir um futuro financeiro sólido" }
+      ]
+    }
+  ],
+  "plano": {
+    "titulo": "O TEU DESPERTAR: RECUPERANDO O CONTROLO SOBRE O AVIATOR E AS APOSTAS",
+    "analise_intro": "As tuas respostas revelam algo que as plataformas de apostas não querem que saibas: o jogo foi desenhado para que o banco ganhe sempre. O Aviator, as apostas desportivas, os slots — todos usam algoritmos e psicologia para criar ilusões de controlo. A boa notícia é que reconheceres isso já é o primeiro acto de poder.",
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Dia 1 — Vê o Verdadeiro Custo",
+        "objetivo": "Calcular o impacto financeiro real das apostas.",
+        "explicacao": "A maioria dos apostadores subestima gravemente o que já perdeu porque a dor é diluída ao longo do tempo. Hoje vemos os números reais.",
+        "tarefa": "Calcula quanto perdeste nas apostas nos últimos 3 meses. Se não tens certeza, estima. Agora pensa: o que podias ter comprado, economizado ou investido com esse valor? Escreve isso.",
+        "desafio": "Hoje não abres nenhuma app de apostas, nem o Aviator. Se sentires vontade, olha para o que escreveste.",
+        "reflexao": "Se eu tivesse investido esse dinheiro em mim mesmo, onde estaria hoje?"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dia 2 — Bloqueia o Acesso",
+        "objetivo": "Criar barreiras físicas e digitais às apostas.",
+        "explicacao": "A força de vontade sozinha não chega. O ambiente tem de trabalhar a teu favor. Hoje fechas as portas.",
+        "tarefa": "Remove todas as apps de apostas do telemóvel. Bloqueia os sites (usa BlockSite). Retira ou bloqueia o método de pagamento ligado às apostas. Se tens saldo em plataformas, levanta-o.",
+        "desafio": "Guarda o dinheiro que tinhhas separado para apostas hoje numa conta poupança ou dá-o a um familiar para guardar.",
+        "reflexao": "Que vida quero construir com o dinheiro que vou poupar a partir de agora?"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dia 3 — Compreende os Gatilhos Emocionais",
+        "objetivo": "Identificar o que te leva a apostar.",
+        "explicacao": "Ninguém aposta apenas por dinheiro. Há uma emoção por baixo: tédio, pressão, necessidade de emoção, escapar de problemas. Hoje descobres a tua.",
+        "tarefa": "Pensa: quando sentes mais vontade de apostar? Que emoção vem antes — stress, euforia, desespero, tédio? Escreve a tua resposta e pensa numa alternativa saudável para essa emoção.",
+        "desafio": "Quando sentires o impulso de apostar hoje, faz em vez disso: 5 minutos de respiração profunda ou uma caminhada de 10 minutos.",
+        "reflexao": "O que estou realmente a tentar sentir ou escapar quando aposto?"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dia 4 — Reconstrói a Relação com o Dinheiro",
+        "objetivo": "Aprender a ver o dinheiro como ferramenta, não como aposta.",
+        "explicacao": "As apostas distorcem completamente a relação com o dinheiro. Passamos a ver cada nota como uma aposta potencial em vez de um recurso valioso.",
+        "tarefa": "Cria um orçamento simples para o próximo mês. Escreve: o que recebes, o que pagas (necessidades), e o que podes poupar. Vê com os teus olhos que existe uma alternativa ao jogo.",
+        "desafio": "Abre uma conta poupança ou cria um envelope físico onde colocas 50 MT hoje. Este é o primeiro depósito do teu futuro real.",
+        "reflexao": "O que eu construiria se poupasse durante 6 meses o que gastava em apostas?"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dia 5 — Cria Emoção Real na Tua Vida",
+        "objetivo": "Substituir a adrenalina falsa por conquistas genuínas.",
+        "explicacao": "O Aviator vende adrenalina. Mas existe adrenalina real — a de concluir um objectivo, de treinar o corpo ao limite, de aprender algo novo. Essa adrenalina constrói.",
+        "tarefa": "Experimenta uma actividade que dê emoção real: desporto intenso, um novo projecto, um desafio físico. Qualquer coisa que te faça sentir vivo sem envolver dinheiro em risco.",
+        "desafio": "Faz algo hoje que te dê orgulho. Uma tarefa que adiaste, uma conversa difícil, um passo no teu crescimento profissional.",
+        "reflexao": "Que conquistas na minha vida me deram a sensação mais real de vitória?"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dia 6 — Pede Apoio se Precisares",
+        "objetivo": "Reconhecer que pedir ajuda é um acto de coragem.",
+        "explicacao": "O vício das apostas é um dos mais difíceis de superar sozinho porque envolve dinheiro real e ciclos de ganho e perda que manipulam o cérebro. Não precisas de fazer isto em silêncio.",
+        "tarefa": "Fala com alguém de confiança — um familiar, amigo próximo — sobre a tua decisão de parar. Não precisas de revelar tudo. Apenas diz: estou a tentar mudar um hábito e preciso do teu apoio.",
+        "desafio": "Se a situação financeira está difícil, faz hoje um plano realista de como vais reorganizar as tuas finanças. Pequenos passos.",
+        "reflexao": "Quem na minha vida celebraria genuinamente esta mudança comigo?"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dia 7 — O Teu Novo Jogo É a Vida Real",
+        "objetivo": "Comprometer-te com um futuro construído sem apostas.",
+        "explicacao": "Chegaste ao Dia 7. Isso prova que tens força. As apostas prometem riqueza rápida e entregam ruína lenta. A vida real tem um jogo diferente — onde o esforço consistente ganha sempre.",
+        "tarefa": "Escreve 3 objectivos financeiros que queres alcançar nos próximos 12 meses. Pequenos, realistas, concretos. Cola-os num lugar que vejas todos os dias.",
+        "desafio": "Calcula quanto dinheiro terás poupado em 30 dias se não apostares nada. Esse número é o teu primeiro prémio real.",
+        "reflexao": "Que homem/mulher quero ser — o que aposta o seu futuro ou o que o constrói com as suas próprias mãos?"
+      }
+    ],
+    "mensagem_final": "Tudo que precisas já está na tua mente. O primeiro passo é despertar e começar a agir. O maior ganho da tua vida não vem de nenhuma plataforma de apostas — vem de ti."
+  }
+}
+

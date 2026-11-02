@@ -1,0 +1,148 @@
+{
+  "id": "acucar_sono",
+  "titulo": "🌙 Dormir Tarde",
+  "emoji": "🌙",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Qual destes hábitos te afecta mais?",
+      "opcoes": [
+        { "id": "a", "texto": "Consumo excessivo de açúcar e comida pouco saudável" },
+        { "id": "b", "texto": "Dormir muito tarde e acordar sem energia" },
+        { "id": "c", "texto": "Ambos — são dois hábitos que se alimentam um ao outro" },
+        { "id": "d", "texto": "Falta de rotina geral — como, durmo e descanso de forma caótica" }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "A que horas costumas dormir normalmente?",
+      "opcoes": [
+        { "id": "a", "texto": "Entre as 22h e as 00h" },
+        { "id": "b", "texto": "Entre a meia-noite e as 2h da manhã" },
+        { "id": "c", "texto": "Depois das 2h da manhã" },
+        { "id": "d", "texto": "Não tenho hora certa — é completamente irregular" }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "O que normalmente fazes antes de dormir que te mantém acordado?",
+      "opcoes": [
+        { "id": "a", "texto": "Vejo TikTok, séries ou vídeos no telemóvel" },
+        { "id": "b", "texto": "Fico em conversas nas redes sociais" },
+        { "id": "c", "texto": "Como doces, snacks ou refrigerantes" },
+        { "id": "d", "texto": "Nada específico — simplesmente não consigo adormecer" }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "Como te sentes de manhã quando acordas?",
+      "opcoes": [
+        { "id": "a", "texto": "Descansado e pronto para o dia" },
+        { "id": "b", "texto": "Cansado mas consigo funcionar" },
+        { "id": "c", "texto": "Muito cansado, sem vontade de levantar" },
+        { "id": "d", "texto": "Exausto — sinto que o sono não me descansou" }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "Como o mau sono e a alimentação afectam o teu dia?",
+      "opcoes": [
+        { "id": "a", "texto": "Pouco — consigo funcionar normalmente" },
+        { "id": "b", "texto": "Tenho menos energia e concentração" },
+        { "id": "c", "texto": "O meu humor e produtividade sofrem muito" },
+        { "id": "d", "texto": "Estou constantemente cansado, irritado e sem foco" }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Já tentaste criar uma rotina de sono ou alimentação mais saudável?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca tentei seriamente" },
+        { "id": "b", "texto": "Tentei mas durei poucos dias" },
+        { "id": "c", "texto": "Tentei várias vezes sem conseguir manter" },
+        { "id": "d", "texto": "Consigo por algum tempo mas o ambiente e os hábitos puxam-me de volta" }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "Qual é o principal benefício que esperas ao regular o teu sono e alimentação?",
+      "opcoes": [
+        { "id": "a", "texto": "Ter mais energia e disposição no dia a dia" },
+        { "id": "b", "texto": "Melhorar a minha saúde e aparência física" },
+        { "id": "c", "texto": "Aumentar a minha produtividade e foco" },
+        { "id": "d", "texto": "Sentir-me melhor comigo mesmo e ter mais controlo" }
+      ]
+    }
+  ],
+  "plano": {
+    "titulo": "O TEU DESPERTAR: RECUPERANDO A ENERGIA E O CONTROLO DO TEU CORPO",
+    "analise_intro": "As tuas respostas revelam algo que a maioria das pessoas ignora: o sono e a alimentação não são apenas hábitos de saúde — são a base de tudo. A tua energia, o teu humor, a tua produtividade, a tua força de vontade — tudo depende de como dormes e do que comes. Quando estas bases falham, tudo o resto fica mais difícil.",
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Dia 1 — Estabelece a Tua Hora de Dormir",
+        "objetivo": "Criar uma ancora temporal para o sono.",
+        "explicacao": "O teu corpo tem um relógio interno — o ritmo circadiano. Quando dormes a horas irregulares, esse relógio desregula-se e o cansaço torna-se crónico. Hoje defines a tua nova hora de dormir.",
+        "tarefa": "Define uma hora de dormir para os próximos 7 dias. Sugestão: entre as 22h e as 23h. Coloca um alarme 30 minutos antes como aviso. Compromete-te a estar na cama a essa hora.",
+        "desafio": "Esta noite, coloca o telemóvel fora do quarto 30 minutos antes de dormir. Prepara o ambiente: luz suave, silêncio, temperatura agradável.",
+        "reflexao": "Como me sentiria se acordasse todos os dias verdadeiramente descansado?"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dia 2 — Reduz o Açúcar com Estratégia",
+        "objetivo": "Identificar e substituir as fontes principais de açúcar.",
+        "explicacao": "O açúcar em excesso cria picos de energia seguidos de quedas bruscas que te deixam cansado, sem foco e com vontade de mais açúcar. É um ciclo — mas que podes quebrar.",
+        "tarefa": "Hoje, identifica os 3 alimentos ou bebidas com mais açúcar que consomes diariamente (refrigerantes, doces, pão branco, sumos industriais). Substitui pelo menos um por uma opção melhor: água com limão, fruta natural, frutos secos.",
+        "desafio": "Não consumas refrigerantes hoje. Apenas água, chá ou sumos naturais sem açúcar adicionado.",
+        "reflexao": "Como o que como afecta a minha energia e humor ao longo do dia?"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dia 3 — A Rotina Matinal Energizante",
+        "objetivo": "Criar um início de dia que respeita o teu corpo.",
+        "explicacao": "A forma como começas a manhã define a tua energia para o resto do dia. Uma manhã lenta e desorganizada cria um dia lento e desorganizado.",
+        "tarefa": "Cria uma rotina matinal de 15 minutos: acordar sem telemóvel, beber água antes de qualquer outra coisa, 5 minutos de movimento (alongamentos ou caminhada), comer algo nutritivo antes de sair.",
+        "desafio": "Não comas açúcar nos primeiros 30 minutos depois de acordar. Começa com água e proteína ou fruta.",
+        "reflexao": "Que diferença noto quando começo o dia com intenção em vez de modo automático?"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dia 4 — Movimento que Regula o Sono",
+        "objetivo": "Usar o exercício para melhorar a qualidade do sono.",
+        "explicacao": "O exercício físico regular é um dos melhores reguladores do sono. Pessoas que fazem exercício adormecem mais rápido, dormem mais profundamente e acordam mais descansadas.",
+        "tarefa": "Faz 30 minutos de actividade física hoje — a qualquer hora, excepto as últimas 2 horas antes de dormir. Pode ser caminhar, correr, futebol, flexões. Qualquer coisa que mexa o corpo.",
+        "desafio": "Esta noite, experimenta o seguinte antes de dormir: 5 minutos de respiração lenta e profunda deitado. Inspira pelo nariz (4 segundos), segura (4), expira pela boca (6). Observa como adormeces.",
+        "reflexao": "Como o meu corpo se sente depois de fazer exercício em comparação com dias sem movimento?"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dia 5 — Come para Ter Energia, Não por Impulso",
+        "objetivo": "Aprender a relação entre alimentação e estado mental.",
+        "explicacao": "Muitas vezes comemos por tédio, ansiedade ou hábito — não por fome real. E escolhemos açúcar e fast food porque são rápidos e satisfatórios a curto prazo. Hoje começamos a mudar esse padrão.",
+        "tarefa": "Antes de comer qualquer snack hoje, faz esta pergunta: Tenho fome de verdade ou estou a comer por outra razão? Se for por outra razão, bebe água e espera 10 minutos.",
+        "desafio": "Prepara uma refeição simples e nutritiva em casa hoje. Não precisa de ser elaborada — apenas evita fast food e produtos processados.",
+        "reflexao": "Que emoção está por baixo do meu desejo de comer açúcar ou comida pouco saudável?"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dia 6 — Cria um Ambiente Favorável ao Sono",
+        "objetivo": "Optimizar o espaço físico para um sono de qualidade.",
+        "explicacao": "O teu quarto é um factor crítico para a qualidade do sono. Temperatura, luz, ruído e o telemóvel — tudo influencia o quão bem dormes.",
+        "tarefa": "Faz estas mudanças no teu quarto: remove o telemóvel da cabeceira (ou põe virado para baixo), escurece o máximo possível, elimina o máximo de ruído. Esta noite experimenta dormir nestas condições.",
+        "desafio": "Avalia os teus 5 dias: como foi o teu sono? A tua alimentação? Escreve o que mudou e o que ainda precisas de trabalhar.",
+        "reflexao": "Que condições no meu ambiente estão a sabotar o meu sono e energia?"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dia 7 — O Corpo É a Tua Base",
+        "objetivo": "Consolidar os hábitos e criar um compromisso de longo prazo.",
+        "explicacao": "Chegaste ao Dia 7. Durante esta semana trataste o teu corpo com mais respeito do que provavelmente o fizeste em muito tempo. Isso é extraordinário. O corpo é a fundação de tudo — mente, emoções, produtividade, relações.",
+        "tarefa": "Escreve o teu plano de saúde para o próximo mês: hora de dormir, número de horas de sono, 2 alimentos que vais eliminar ou reduzir, 1 actividade física semanal. Simples e realista.",
+        "desafio": "Partilha o teu compromisso de saúde com alguém próximo. O apoio de outros fortalece os novos hábitos.",
+        "reflexao": "Que tipo de vida me é possível quando o meu corpo está descansado, alimentado e cuidado?"
+      }
+    ],
+    "mensagem_final": "Tudo que precisas já está na tua mente. O primeiro passo é despertar e começar a agir. Quando cuidas do teu corpo, estás a cuidar de tudo o que és."
+  }
+}
+

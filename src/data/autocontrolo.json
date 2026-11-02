@@ -1,0 +1,148 @@
+{
+  "id": "autocontrolo",
+  "titulo": "🎯 Falta de Disciplina",
+  "emoji": "🎯",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Em que área sentes que tens menos autocontrolo?",
+      "opcoes": [
+        { "id": "a", "texto": "Nas emoções — irrito-me ou tristeza facilmente" },
+        { "id": "b", "texto": "Nos hábitos de saúde — como, durmo e exercito-me mal" },
+        { "id": "c", "texto": "No tempo — não consigo cumprir horários nem metas" },
+        { "id": "d", "texto": "Em tudo — sinto que vivo de forma reactiva, sem rumo" }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "Com que frequência fazes coisas que sabes que são prejudiciais para ti?",
+      "opcoes": [
+        { "id": "a", "texto": "Raramente — só em momentos de muita pressão" },
+        { "id": "b", "texto": "Às vezes — alguns dias por semana" },
+        { "id": "c", "texto": "Frequentemente — é quase diário" },
+        { "id": "d", "texto": "Quase sempre — sinto que não tenho controlo" }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "O que acontece normalmente quando tentas resistir a um impulso?",
+      "opcoes": [
+        { "id": "a", "texto": "Consigo resistir, mas com muito esforço" },
+        { "id": "b", "texto": "Resisto no início mas acabo por ceder" },
+        { "id": "c", "texto": "Raramente consigo resistir" },
+        { "id": "d", "texto": "Nem tento — sei que vou ceder na mesma" }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "Como a falta de autocontrolo afecta a tua vida?",
+      "opcoes": [
+        { "id": "a", "texto": "Prejudica a minha produtividade e metas" },
+        { "id": "b", "texto": "Afecta as minhas relações e como os outros me vêem" },
+        { "id": "c", "texto": "Prejudica a minha saúde física" },
+        { "id": "d", "texto": "Afecta todas as áreas da minha vida" }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "O que geralmente desencadeia a perda de controlo?",
+      "opcoes": [
+        { "id": "a", "texto": "Stress ou pressão do dia a dia" },
+        { "id": "b", "texto": "Tédio ou ausência de ocupação" },
+        { "id": "c", "texto": "Emoções intensas — raiva, tristeza, ansiedade" },
+        { "id": "d", "texto": "Influência do ambiente ou das pessoas à volta" }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Já tentaste criar hábitos ou rotinas para melhorar o teu autocontrolo?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca tentei de forma séria" },
+        { "id": "b", "texto": "Tentei mas desisti em poucos dias" },
+        { "id": "c", "texto": "Tentei várias vezes com pouco sucesso" },
+        { "id": "d", "texto": "Consigo por algum tempo mas acabo por perder a disciplina" }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "Quando imaginas uma versão mais disciplinada de ti mesmo, o que essa pessoa faz diferente?",
+      "opcoes": [
+        { "id": "a", "texto": "Cumpre o que planeia e não desiste" },
+        { "id": "b", "texto": "Controla as emoções sem reagir de forma impulsiva" },
+        { "id": "c", "texto": "Tem uma rotina sólida de saúde, trabalho e descanso" },
+        { "id": "d", "texto": "Tudo isso — vive com propósito e consistência" }
+      ]
+    }
+  ],
+  "plano": {
+    "titulo": "O TEU DESPERTAR: CONSTRUINDO A DISCIPLINA QUE TRANSFORMA VIDAS",
+    "analise_intro": "As tuas respostas mostram algo que a maioria das pessoas nunca reconhece: a falta de autocontrolo não é um defeito de carácter — é um músculo que nunca foi treinado. E tal como qualquer músculo, pode ser desenvolvido, dia após dia, com os exercícios certos.",
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Dia 1 — O Poder das Pequenas Vitórias",
+        "objetivo": "Construir momentum através de acções mínimas mas consistentes.",
+        "explicacao": "O autocontrolo não se ganha de repente. Cresce a partir de pequenas vitórias diárias que se acumulam como tijolos numa parede.",
+        "tarefa": "Escolhe UMA coisa pequena que vais fazer hoje sem excepções: acordar a uma hora definida, beber 2 litros de água, não tocar no telemóvel durante 1 hora seguida. Uma coisa apenas. Cumpre.",
+        "desafio": "Quando sentires um impulso negativo hoje, conta até 10 antes de agir. Esse espaço de 10 segundos é onde o autocontrolo nasce.",
+        "reflexao": "Que pequena vitória posso garantir hoje sem depender de motivação?"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dia 2 — A Rotina Matinal que Muda Tudo",
+        "objetivo": "Criar um início de dia que estabelece o tom para o resto.",
+        "explicacao": "As primeiras horas do dia definem o teu estado mental para as horas seguintes. Quem controla a manhã, controla o dia.",
+        "tarefa": "Cria uma rotina matinal de 20 minutos: acordar sem telemóvel, beber água, 5 minutos de actividade física ou alongamentos, 5 minutos de silêncio ou respiração. Repete amanhã.",
+        "desafio": "Não vejas o telemóvel na primeira hora após acordar. Vê o que muda no teu estado de espírito.",
+        "reflexao": "Como começo o dia actualmente e como isso influencia o resto do meu dia?"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dia 3 — Aprende a Gerir os Impulsos",
+        "objetivo": "Desenvolver a capacidade de pausar entre o gatilho e a resposta.",
+        "explicacao": "A diferença entre uma pessoa impulsiva e uma disciplinada não é que uma não sente vontades. É que uma aprendeu a fazer uma pausa antes de agir.",
+        "tarefa": "Hoje, toda a vez que sentires um impulso (comer algo que não devia, pegar no telemóvel, dizer algo por raiva), faz a Regra dos 5 Minutos: espera 5 minutos. Se ainda quiseres, decide então.",
+        "desafio": "Identifica o teu gatilho emocional mais frequente e cria uma resposta alternativa: ex. em vez de comer por stress, bebe água e respira.",
+        "reflexao": "Qual é a diferença entre reagir e responder? Quando foi a última vez que respondi em vez de reagir?"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dia 4 — O Corpo Disciplinado Treina a Mente",
+        "objetivo": "Usar o exercício físico como escola do autocontrolo.",
+        "explicacao": "Treinar o corpo é uma das formas mais eficazes de treinar a disciplina. Cada repetição que completas quando queres parar é uma vitória do teu autocontrolo.",
+        "tarefa": "Faz exercício físico hoje — pelo menos 20 minutos. Quando quiseres parar antes do tempo, continua por mais 2 minutos. Esse momento de 'quero parar mas continuo' é o músculo do autocontrolo a crescer.",
+        "desafio": "Elimina um prazer imediato hoje — um doce, uma hora de redes sociais, uma compra desnecessária. Sente o poder de dizer não a ti mesmo.",
+        "reflexao": "Como me sinto quando cumpro algo mesmo quando não tinha vontade?"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dia 5 — Planeia ou Reage",
+        "objetivo": "Criar um sistema de planeamento simples para guiar as tuas acções.",
+        "explicacao": "Sem plano, vivemos à mercê dos impulsos do momento. Com um plano simples, as decisões já foram tomadas antes de as emoções interferirem.",
+        "tarefa": "Esta noite, escreve as 3 prioridades de amanhã antes de dormir. Amanhã, começa pelo mais importante antes de qualquer outra coisa. Não negoceies contigo mesmo.",
+        "desafio": "Faz amanhã a coisa que mais adias. Sem esperar motivação — começa e a motivação vem depois.",
+        "reflexao": "Que diferença existe entre como planeio o meu dia e como realmente o vivo?"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dia 6 — Recompensas e Consequências",
+        "objetivo": "Criar um sistema de responsabilidade pessoal.",
+        "explicacao": "O autocontrolo cresce quando existe um sistema claro de recompensas pelo bom comportamento e consequências pelas recaídas. Hoje crias o teu.",
+        "tarefa": "Define: se cumprir os meus hábitos esta semana, vou recompensar-me com ___ (algo que gostas e não prejudica). Se não cumprir, ___  (uma pequena consequência que te motive). Escreve e partilha com alguém.",
+        "desafio": "Avalia a semana honestamente: onde cumpri? Onde falhámos? Que ajustes preciso de fazer?",
+        "reflexao": "Sou honesto comigo mesmo sobre o meu progresso?"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dia 7 — A Disciplina é Liberdade",
+        "objetivo": "Compreender que o autocontrolo não limita — liberta.",
+        "explicacao": "Chegaste ao Dia 7. Há uma grande mentira sobre disciplina: que é uma prisão. A verdade é o contrário — quem tem autocontrolo é quem é verdadeiramente livre. Livre de impulsos, de consequências, de arrependimentos.",
+        "tarefa": "Escreve 5 áreas da tua vida onde um maior autocontrolo te tornaria mais livre. Cada uma é uma razão para continuar.",
+        "desafio": "Compromete-te a um hábito diário por 30 dias — pequeno, simples, consistente. A consistência é o único segredo da disciplina.",
+        "reflexao": "Quem me torno quando tenho controlo sobre os meus impulsos, o meu tempo e as minhas escolhas?"
+      }
+    ],
+    "mensagem_final": "Tudo que precisas já está na tua mente. O primeiro passo é despertar e começar a agir. A disciplina que procuras não está algures no futuro — está em cada pequena escolha que fazes agora."
+  }
+}
+

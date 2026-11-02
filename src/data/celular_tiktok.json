@@ -1,0 +1,148 @@
+{
+  "id": "celular_tiktok",
+  "titulo": "📱 Celular / TikTok",
+  "emoji": "📱",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Quantas horas por dia passas no telemóvel, em média?",
+      "opcoes": [
+        { "id": "a", "texto": "1 a 2 horas" },
+        { "id": "b", "texto": "3 a 4 horas" },
+        { "id": "c", "texto": "5 a 6 horas" },
+        { "id": "d", "texto": "Mais de 7 horas" }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "O que fazes normalmente quando pegas no telemóvel?",
+      "opcoes": [
+        { "id": "a", "texto": "Vejo TikTok, Reels ou YouTube Shorts" },
+        { "id": "b", "texto": "Estou no WhatsApp ou redes sociais sem propósito" },
+        { "id": "c", "texto": "Jogo ou navego sem destino" },
+        { "id": "d", "texto": "Tudo ao mesmo tempo, sem conseguir parar" }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "Em que momentos o telemóvel mais te rouba atenção?",
+      "opcoes": [
+        { "id": "a", "texto": "Durante as refeições ou momentos com família/amigos" },
+        { "id": "b", "texto": "Quando devia estar a estudar ou trabalhar" },
+        { "id": "c", "texto": "Antes de dormir — fico até tarde no ecrã" },
+        { "id": "d", "texto": "Logo ao acordar, antes de fazer qualquer coisa" }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "Como o uso excessivo do telemóvel afecta o teu sono?",
+      "opcoes": [
+        { "id": "a", "texto": "Durmo bem, não sinto diferença" },
+        { "id": "b", "texto": "Adormeço tarde por causa do telemóvel" },
+        { "id": "c", "texto": "Acordo cansado, sem ter dormido o suficiente" },
+        { "id": "d", "texto": "O meu sono está completamente desregulado" }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "Como te sentes quando ficas algum tempo sem o telemóvel?",
+      "opcoes": [
+        { "id": "a", "texto": "Tranquilo, não sinto falta" },
+        { "id": "b", "texto": "Um pouco ansioso ou inquieto" },
+        { "id": "c", "texto": "Muito ansioso, fico a pensar nele" },
+        { "id": "d", "texto": "Incapaz de me concentrar em mais nada" }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Já tentaste reduzir o tempo de ecrã antes?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca tentei seriamente" },
+        { "id": "b", "texto": "Tentei mas voltei ao mesmo em poucos dias" },
+        { "id": "c", "texto": "Tentei várias vezes, sem sucesso" },
+        { "id": "d", "texto": "Consigo reduzir por alguns dias, mas recaio" }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "Qual é o teu maior motivo para querer mudar este hábito?",
+      "opcoes": [
+        { "id": "a", "texto": "Quero ter mais tempo para coisas que importam" },
+        { "id": "b", "texto": "Quero melhorar o meu desempenho no estudo/trabalho" },
+        { "id": "c", "texto": "Quero melhorar o meu sono e a minha energia" },
+        { "id": "d", "texto": "Quero estar mais presente com as pessoas à minha volta" }
+      ]
+    }
+  ],
+  "plano": {
+    "titulo": "O TEU DESPERTAR: LIBERTANDO-TE DO VÍCIO DO ECRÃ",
+    "analise_intro": "As tuas respostas mostram algo que a maioria das pessoas não admite: o telemóvel deixou de ser uma ferramenta e tornou-se no teu gestor de tempo e atenção. Cada notificação, cada vídeo, cada scroll é um pequeno roubo da tua concentração, energia e potencial.",
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Dia 1 — Vê a Realidade do Teu Ecrã",
+        "objetivo": "Tomar consciência do tempo real perdido.",
+        "explicacao": "O primeiro passo é ver os números. A maioria das pessoas subestima em 40% o tempo que passa no telemóvel.",
+        "tarefa": "Vai às definições do teu telemóvel e verifica o tempo de ecrã da última semana. Escreve o número. Multiplica por 7 dias. Esse é o tempo que podia ter sido investido na tua vida.",
+        "desafio": "Esta noite, o telemóvel carrega fora do quarto. Lê algo, pensa, ou simplesmente dorme mais cedo.",
+        "reflexao": "Se usasse metade desse tempo em algo que constrói, onde estaria daqui a 6 meses?"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dia 2 — Reorganiza o Teu Ambiente Digital",
+        "objetivo": "Tornar o telemóvel menos apelativo.",
+        "explicacao": "O design do TikTok e das redes sociais foi criado por engenheiros para te manter preso. Hoje lutas de volta.",
+        "tarefa": "Remove as apps que mais te consomem da tela inicial. Activa o modo a preto e branco no telemóvel (isto reduz o apelo visual em 30%). Desactiva todas as notificações desnecessárias.",
+        "desafio": "Não abras nenhuma rede social antes das 12h do meio-dia.",
+        "reflexao": "O meu telemóvel está configurado para me servir ou para me distrair?"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dia 3 — Cria Zonas Livres de Ecrã",
+        "objetivo": "Estabelecer espaços e momentos sagrados sem telemóvel.",
+        "explicacao": "A libertação do vício começa por criar fronteiras físicas e temporais claras.",
+        "tarefa": "Define três zonas livres de telemóvel: 1) A mesa das refeições. 2) O quarto (durante o sono). 3) A primeira hora depois de acordar. Respeita estas zonas hoje.",
+        "desafio": "Durante uma refeição, deixa o telemóvel noutro sítio e conversa ou come em silêncio total.",
+        "reflexao": "Que momentos da minha vida estou a desperdiçar por estar com os olhos no ecrã?"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dia 4 — Substitui o Scroll por Algo Real",
+        "objetivo": "Descobrir actividades que dão satisfação real.",
+        "explicacao": "O vazio que sentes quando largas o telemóvel é real. O problema é que ainda não encontraste o que pode substituí-lo.",
+        "tarefa": "Escolhe uma actividade que não envolve ecrã e faz durante 1 hora hoje: cozinhar, caminhar, ouvir música sem fazer mais nada, ler, treinar, conversar pessoalmente.",
+        "desafio": "Passa 2 horas seguidas sem pegar no telemóvel durante o dia. Observa o que sentes.",
+        "reflexao": "Que actividades me davam alegria genuína antes do telemóvel dominar o meu tempo?"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dia 5 — Usa o Telemóvel com Intenção",
+        "objetivo": "Aprender a usar a tecnologia de forma consciente.",
+        "explicacao": "O objectivo não é eliminar o telemóvel da tua vida. É tornares-te o dono do teu tempo — não o escravo das notificações.",
+        "tarefa": "Cria um horário de uso: por exemplo, 30 minutos de manhã e 30 minutos à tarde para redes sociais. Fora disso, o telemóvel fica guardado. Experimenta durante este dia.",
+        "desafio": "Faz uma tarefa importante que sempre adiaste e não toca no telemóvel até acabá-la.",
+        "reflexao": "Quando uso o telemóvel com intenção, como me sinto diferente?"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dia 6 — Reconecta com o Mundo Real",
+        "objetivo": "Fortalecer os laços humanos fora do ecrã.",
+        "explicacao": "O TikTok dá-te uma ilusão de conexão. Mas o verdadeiro pertencimento vem de momentos reais com pessoas reais.",
+        "tarefa": "Contacta alguém de quem gostas — não por mensagem, mas por chamada ou pessoalmente. Passa tempo de qualidade sem telemóvel à vista.",
+        "desafio": "Passa a tarde inteira sem redes sociais. Usa o tempo para algo físico ou criativo.",
+        "reflexao": "Quais são as relações na minha vida que merecem mais da minha atenção real?"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dia 7 — Sê o Dono do Teu Tempo",
+        "objetivo": "Consolidar os novos hábitos e criar um sistema sustentável.",
+        "explicacao": "Chegaste ao Dia 7. Nesta semana tomaste o controlo de algo que muita gente nunca consegue. Agora é hora de tornar isto um estilo de vida.",
+        "tarefa": "Escreve as 3 regras de uso do telemóvel que vais manter daqui para a frente. Exemplo: 'Não uso o telemóvel na primeira hora do dia. Não levo para a cama. Tenho máximo 1 hora de redes sociais por dia.'",
+        "desafio": "Faz um dia quase digital-free: apenas chamadas e mensagens necessárias.",
+        "reflexao": "Quem me torno quando sou dono do meu tempo e da minha atenção?"
+      }
+    ],
+    "mensagem_final": "Tudo que precisas já está na tua mente. O primeiro passo é despertar e começar a agir. O telemóvel é uma ferramenta poderosa — mas tu és mais poderoso do que ele."
+  }
+}
+

@@ -1,0 +1,148 @@
+{
+  "id": "dagga_cigarro",
+  "titulo": "🚬 Cigarro",
+  "emoji": "🚬",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "O que consomes com mais regularidade?",
+      "opcoes": [
+        { "id": "a", "texto": "Cigarro (tabaco)" },
+        { "id": "b", "texto": "Dagga (canábis)" },
+        { "id": "c", "texto": "Ambos" },
+        { "id": "d", "texto": "Outros — narguilé, vapes ou similares" }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "Com que frequência consomes?",
+      "opcoes": [
+        { "id": "a", "texto": "Apenas em momentos sociais" },
+        { "id": "b", "texto": "Algumas vezes por semana" },
+        { "id": "c", "texto": "Todos os dias" },
+        { "id": "d", "texto": "Várias vezes por dia" }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "Em que situações costumas consumir mais?",
+      "opcoes": [
+        { "id": "a", "texto": "Com amigos ou em convívios sociais" },
+        { "id": "b", "texto": "Quando estou ansioso ou stressado" },
+        { "id": "c", "texto": "Por hábito — já faz parte da rotina diária" },
+        { "id": "d", "texto": "Para relaxar, focar ou adormecer" }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "Como o consumo afecta a tua saúde e energia?",
+      "opcoes": [
+        { "id": "a", "texto": "Não sinto diferença na saúde ainda" },
+        { "id": "b", "texto": "Sinto cansaço mais frequente e tosse" },
+        { "id": "c", "texto": "A minha resistência física diminuiu" },
+        { "id": "d", "texto": "Sinto impacto claro na respiração e disposição" }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "Como o consumo afecta a tua mente e clareza mental?",
+      "opcoes": [
+        { "id": "a", "texto": "Não sinto impacto na clareza" },
+        { "id": "b", "texto": "Às vezes sinto dificuldade de concentração" },
+        { "id": "c", "texto": "Frequentemente me sinto menos alerta ou motivado" },
+        { "id": "d", "texto": "Sinto que a minha memória e foco deterioraram" }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Já tentaste parar ou reduzir antes?",
+      "opcoes": [
+        { "id": "a", "texto": "Nunca tentei seriamente" },
+        { "id": "b", "texto": "Tentei mas voltei em poucos dias" },
+        { "id": "c", "texto": "Tentei várias vezes sem sucesso duradouro" },
+        { "id": "d", "texto": "Consigo parar por algum tempo mas a pressão social faz-me voltar" }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "Qual é a tua principal motivação para parar agora?",
+      "opcoes": [
+        { "id": "a", "texto": "Quero ter mais saúde e energia" },
+        { "id": "b", "texto": "Quero poupar o dinheiro que gasto nisto" },
+        { "id": "c", "texto": "Quero ser um exemplo para a minha família" },
+        { "id": "d", "texto": "Quero sentir que tenho controlo sobre a minha vida" }
+      ]
+    }
+  ],
+  "plano": {
+    "titulo": "O TEU DESPERTAR: RESPIRANDO LIVRE — UM DIA DE CADA VEZ",
+    "analise_intro": "As tuas respostas mostram um padrão muito comum: o que começou como uma experiência social tornou-se uma âncora diária. O teu corpo e mente adaptaram-se ao hábito — e agora precisam de reaprender como funcionar sem ele. Isso é possível, e mais pessoas conseguem do que imaginas.",
+    "dias": [
+      {
+        "dia": 1,
+        "titulo": "Dia 1 — Define o Teu Dia Zero",
+        "objetivo": "Tomar a decisão concreta e preparar o ambiente.",
+        "explicacao": "Parar de fumar ou consumir dagga começa com uma decisão consciente e uma preparação do ambiente. Hoje é o teu Dia Zero.",
+        "tarefa": "Remove do teu espaço tudo que está associado ao consumo: cigarros, isqueiros, cachimbos, papéis. Não os deites fora se não estás pronto — guarda em lugar inacessível. Declara a ti mesmo: hoje começo.",
+        "desafio": "Quando sentires vontade, bebe um grande copo de água lentamente. A hidratação ajuda o corpo a eliminar toxinas e reduz a intensidade da vontade.",
+        "reflexao": "O que ganho quando imagino a minha vida sem este hábito daqui a 3 meses?"
+      },
+      {
+        "dia": 2,
+        "titulo": "Dia 2 — Domina os Primeiros Impulsos",
+        "objetivo": "Aprender a atravessar os momentos mais intensos de vontade.",
+        "explicacao": "Os primeiros dias são os mais difíceis. As vontades são intensas mas breves — duram em média 3 a 5 minutos. Só precisas de atravessar esse tempo.",
+        "tarefa": "Cria o teu 'Kit de 5 Minutos': uma lista de 3 coisas que fazes quando a vontade aparece. Exemplos: caminhar rapidamente, ligar para alguém, beber água, fazer flexões, mascar pastilha elástica.",
+        "desafio": "Passa o dia inteiro sem consumir. Regista quantas vezes sentiste vontade e quantas resististe. Cada resistência é uma vitória.",
+        "reflexao": "Quando resisto ao impulso, como me sinto depois?"
+      },
+      {
+        "dia": 3,
+        "titulo": "Dia 3 — Lida com a Pressão Social",
+        "objetivo": "Manter a decisão mesmo em ambientes sociais desafiantes.",
+        "explicacao": "Um dos maiores obstáculos é o grupo. Em Moçambique, a pressão dos amigos para fumar ou consumir juntos é real. Mas as tuas escolhas de saúde são tuas.",
+        "tarefa": "Pratica frases simples para situações sociais: 'Estou a tentar parar, obrigado.' 'Não, hoje não.' 'Estou bem assim.' Não precisas de justificar extensamente — a simplicidade é poderosa.",
+        "desafio": "Evita hoje os ambientes ou pessoas que mais te associas ao consumo. Se não for possível, vai preparado com o teu plano de 5 minutos.",
+        "reflexao": "Quem são os amigos que respeitam genuinamente as minhas escolhas de saúde?"
+      },
+      {
+        "dia": 4,
+        "titulo": "Dia 4 — Sente os Pulmões Respirar",
+        "objetivo": "Reconhecer as mudanças físicas positivas que já estão a acontecer.",
+        "explicacao": "O corpo começa a recuperar rapidamente. Após 72 horas sem nicotina, os brônquios relaxam e a respiração melhora. O gosto e o olfacto começam a regressar.",
+        "tarefa": "Faz exercício aeróbico hoje — corrida leve, futebol, saltar à corda, qualquer coisa. Foca-te na tua respiração. Sente a capacidade pulmonar. Regista como se sente.",
+        "desafio": "Vai a um espaço ao ar livre — praia, parque, campo. Inspira fundo várias vezes. Esse ar é o teu prémio.",
+        "reflexao": "Como é que os meus pulmões e o meu corpo estão a mudar nestes dias?"
+      },
+      {
+        "dia": 5,
+        "titulo": "Dia 5 — O Dinheiro que Fica",
+        "objetivo": "Tomar consciência do ganho financeiro de parar.",
+        "explicacao": "Um cigarro parece barato. Mas o hábito é caro. Calculemos o que já recuperaste.",
+        "tarefa": "Calcula quanto gastas por semana em tabaco ou dagga. Multiplica por 52 (semanas do ano). Escreve o número. Agora escreve o que farias com esse dinheiro. Esse número é o teu motivador financeiro.",
+        "desafio": "Guarda hoje o dinheiro que gastas normalmente em consumo. Coloca numa caixinha ou conta. Este é o teu fundo de liberdade.",
+        "reflexao": "O que construiria com o dinheiro que poupo nos próximos 6 meses?"
+      },
+      {
+        "dia": 6,
+        "titulo": "Dia 6 — Recaída Não é Derrota",
+        "objetivo": "Desenvolver resiliência para continuar mesmo se houve deslizes.",
+        "explicacao": "Se houve uma recaída nestes dias, não é o fim. É informação. Diz-te qual é o teu gatilho mais forte — e onde precisas de mais apoio.",
+        "tarefa": "Se houve recaída: anota o que aconteceu antes, que emoção sentias, onde estavas. Esse registo vale mais do que qualquer arrependimento. Se não houve recaída: celebra. Escreve como te sentes.",
+        "desafio": "Reinicia o contador se precisar — sem drama, sem julgamento. Cada tentativa fortalece o músculo da mudança.",
+        "reflexao": "O que aprendi sobre mim mesmo nestes dias de esforço?"
+      },
+      {
+        "dia": 7,
+        "titulo": "Dia 7 — A Primeira Semana é a Mais Difícil",
+        "objetivo": "Celebrar e consolidar o progresso da primeira semana.",
+        "explicacao": "Chegaste ao Dia 7. A primeira semana é clinicamente reconhecida como a mais difícil de parar de fumar. Se chegaste até aqui, provaste que tens força suficiente para continuar.",
+        "tarefa": "Escreve uma lista: 'Em 7 dias, eu...' — o que conquistaste, o que sentiste, o que aprendeste. Guarda este registo para os dias difíceis à frente.",
+        "desafio": "Compromete-te com mais 7 dias. Não 30 — apenas 7 de cada vez. A mudança duradoura é feita de pequenos compromissos cumpridos.",
+        "reflexao": "A pessoa que fui nesta semana — é quem quero continuar a ser?"
+      }
+    ],
+    "mensagem_final": "Tudo que precisas já está na tua mente. O primeiro passo é despertar e começar a agir. Cada respiração livre é uma prova do teu poder."
+  }
+}
+
