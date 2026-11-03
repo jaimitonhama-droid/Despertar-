@@ -132,21 +132,21 @@ export default function PagamentoPage() {
           borderRadius: "100px",
           fontWeight: 700,
         }}>
-          ⏳ {formatarTempo(segundos)}
+          ⏳ Válido por {formatarTempo(segundos)}
         </span>
       </header>
 
       {/* BLOCO CENTRAL ULTRA-LIMPO */}
-      <div style={{ maxWidth: "380px", margin: "0 auto", width: "100%" }}>
+      <div style={{ maxWidth: "400px", margin: "0 auto", width: "100%" }}>
 
         {/* PROVA SOCIAL SUTIL */}
-        <div style={{ textAlign: "center", margin: "6px 0 8px" }}>
+        <div style={{ textAlign: "center", margin: "4px 0 8px" }}>
           <span style={{
             fontSize: "11px",
             color: "rgba(255,255,255,0.65)",
             background: "rgba(255,255,255,0.04)",
             border: "1px solid rgba(255,255,255,0.08)",
-            padding: "4px 10px",
+            padding: "3px 10px",
             borderRadius: "100px",
             display: "inline-flex",
             alignItems: "center",
@@ -156,65 +156,56 @@ export default function PagamentoPage() {
           </span>
         </div>
 
-        {/* CARD DE RESUMO + TEASER DO DIAGNÓSTICO BLOQUEADO */}
+        {/* CARD COM CLAREZA TOTAL DO QUE ESTÁ A PAGAR */}
         <div style={{
           background: "rgba(244,197,66,0.05)",
           border: "1px solid rgba(244,197,66,0.22)",
           borderRadius: "16px",
-          padding: "12px 14px",
+          padding: "13px 15px",
           marginBottom: "12px",
         }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "4px" }}>
             <span style={{ fontSize: "10px", color: "#F4C542", fontWeight: 800, letterSpacing: "1px", textTransform: "uppercase" }}>
-              🔒 Diagnóstico das 7 Respostas
+              🔒 O QUE VAIS RECEBER POR 25 MT:
             </span>
-            <span style={{ fontSize: "12px" }}>{catInfo?.emoji}</span>
+            <span style={{ fontSize: "14px" }}>{catInfo?.emoji}</span>
           </div>
 
-          <h2 style={{ fontSize: "14px", fontWeight: 800, margin: "0 0 6px", lineHeight: 1.25 }}>
-            Plano de 7 dias: {catInfo?.titulo}
+          <h2 style={{ fontSize: "15px", fontWeight: 900, margin: "0 0 10px", lineHeight: 1.25 }}>
+            Plano Pessoal de 7 Dias: {catInfo?.titulo}
           </h2>
 
-          {/* TEASER BORRADO (CURIOSIDADE PSICOLÓGICA) */}
-          <div style={{
-            background: "rgba(0,0,0,0.25)",
-            border: "1px dashed rgba(244,197,66,0.3)",
-            borderRadius: "10px",
-            padding: "8px 10px",
-            margin: "6px 0 8px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}>
-            <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.85)" }}>
-              <span style={{ color: "#F4C542", fontWeight: 700 }}>Gatilho identificado: </span>
-              <span style={{
-                filter: "blur(4px)",
-                userSelect: "none",
-                background: "rgba(255,255,255,0.15)",
-                padding: "1px 6px",
-                borderRadius: "4px",
-              }}>
-                Padrão Noturno Crítico
-              </span>
+          {/* LISTA CLARA E OBJETIVA DOS ENTREGÁVEIS */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "10px" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "11px", lineHeight: 1.4, color: "rgba(255,255,255,0.9)" }}>
+              <span style={{ color: "#10B981", fontWeight: 900 }}>✓</span>
+              <span><strong>Diagnóstico Real:</strong> Análise das tuas 7 respostas revelando onde a mente falha.</span>
             </div>
-            <span style={{ fontSize: "11px" }}>🔒</span>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "11px", lineHeight: 1.4, color: "rgba(255,255,255,0.9)" }}>
+              <span style={{ color: "#10B981", fontWeight: 900 }}>✓</span>
+              <span><strong>Roteiro dos 7 Dias:</strong> Tarefas diárias práticas do Dia 1 ao 7 para quebrar o hábito.</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "11px", lineHeight: 1.4, color: "rgba(255,255,255,0.9)" }}>
+              <span style={{ color: "#10B981", fontWeight: 900 }}>✓</span>
+              <span><strong>Regra de Emergência:</strong> O que fazer no minuto exato em que a vontade bater forte.</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "11px", lineHeight: 1.4, color: "rgba(255,255,255,0.9)" }}>
+              <span style={{ color: "#10B981", fontWeight: 900 }}>✓</span>
+              <span><strong>Acesso Imediato:</strong> Desbloqueio direto neste ecrã + cópia para o teu WhatsApp.</span>
+            </div>
           </div>
 
-          <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
-            {["✓ Diagnóstico real", "✓ Tarefas de 7 dias", "✓ Desafios práticos"].map((tag, i) => (
-              <span key={i} style={{
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "100px",
-                padding: "2px 7px",
-                fontSize: "9.5px",
-                fontWeight: 600,
-                color: "rgba(255,255,255,0.85)",
-              }}>
-                {tag}
-              </span>
-            ))}
+          {/* PORQUÊ 25 MT (TRANSPARÊNCIA SEM PÃO) */}
+          <div style={{
+            background: "rgba(255,255,255,0.04)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: "10px",
+            padding: "7px 10px",
+            fontSize: "10px",
+            color: "rgba(255,255,255,0.7)",
+            lineHeight: 1.4,
+          }}>
+            💡 <strong style={{ color: "#F4C542" }}>Porquê 25 MT?</strong> Taxa única simbólica para manter a plataforma online e garantir o teu compromisso real de mudança.
           </div>
         </div>
 
@@ -226,7 +217,7 @@ export default function PagamentoPage() {
           padding: "14px 16px",
           marginBottom: "12px",
         }}>
-          {/* LOGO M-PESA + VALOR 25 MT (COM ANCORAGEM) */}
+          {/* LOGO M-PESA + VALOR 25 MT */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <div style={{
@@ -245,7 +236,7 @@ export default function PagamentoPage() {
             </div>
             <div style={{ textAlign: "right" }}>
               <span style={{ fontSize: "9px", color: "#10B981", fontWeight: 700, display: "block", textTransform: "uppercase" }}>
-                Menos que 1 recarga
+                Taxa Única
               </span>
               <span style={{ fontSize: "24px", fontWeight: 900, color: "#F4C542", lineHeight: 1 }}>25 MT</span>
             </div>
