@@ -13,6 +13,7 @@ export default function PagamentoPage() {
   const [telefone, setTelefone] = useState("");
   const [estado, setEstado] = useState<"idle" | "processando" | "erro">("idle");
   const [erro, setErro] = useState("");
+  const [segundos, setSegundos] = useState(594); // ~9:54 min de urgência suave
 
   useEffect(() => {
     const id = sessionStorage.getItem("categoriaId");
@@ -23,9 +24,22 @@ export default function PagamentoPage() {
     // Se já tinha telefone digitado anteriormente, recupera
     const telSalvo = localStorage.getItem("despertar_telefone");
     if (telSalvo) setTelefone(telSalvo);
+
+    // Timer regressivo suave
+    const timer = setInterval(() => {
+      setSegundos((prev) => (prev > 10 ? prev - 1 : 10));
+    }, 1000);
+
+    return () => clearInterval(timer);
   }, [router]);
 
   const catInfo = CATEGORIAS.find((c) => c.id === categoriaId);
+
+  const formatarTempo = (totalSeg: number) => {
+    const m = Math.floor(totalSeg / 60);
+    const s = totalSeg % 60;
+    return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+  };
 
   const handlePagar = async () => {
     const numeroLimpo = telefone.replace(/\D/g, "");
@@ -92,15 +106,15 @@ export default function PagamentoPage() {
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
-      padding: "16px 20px 24px",
+      padding: "14px 18px 20px",
       boxSizing: "border-box",
     }}>
-      {/* HEADER COMPACTO */}
+      {/* HEADER COMPACTO COM TIMER DISCRETO */}
       <header style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        paddingBottom: "12px",
+        paddingBottom: "10px",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}>
         <button onClick={() => router.back()} style={{
@@ -110,45 +124,91 @@ export default function PagamentoPage() {
         <span style={{ fontWeight: 800, color: "#F4C542", letterSpacing: "1.5px", fontSize: "14px" }}>
           DESPERTAR
         </span>
-        <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.5)" }}>
-          {catInfo?.emoji} {catInfo?.titulo}
+        <span style={{
+          fontSize: "10px",
+          color: "#F4C542",
+          background: "rgba(244,197,66,0.1)",
+          padding: "3px 8px",
+          borderRadius: "100px",
+          fontWeight: 700,
+        }}>
+          ⏳ {formatarTempo(segundos)}
         </span>
       </header>
 
       {/* BLOCO CENTRAL ULTRA-LIMPO */}
       <div style={{ maxWidth: "380px", margin: "0 auto", width: "100%" }}>
 
-        {/* CARD DE RESUMO DO QUE ESTÁ A PAGAR */}
+        {/* PROVA SOCIAL SUTIL */}
+        <div style={{ textAlign: "center", margin: "6px 0 8px" }}>
+          <span style={{
+            fontSize: "11px",
+            color: "rgba(255,255,255,0.65)",
+            background: "rgba(255,255,255,0.04)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            padding: "4px 10px",
+            borderRadius: "100px",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "5px",
+          }}>
+            <span>🔥</span> +1.480 jovens moçambicanos já iniciaram
+          </span>
+        </div>
+
+        {/* CARD DE RESUMO + TEASER DO DIAGNÓSTICO BLOQUEADO */}
         <div style={{
           background: "rgba(244,197,66,0.05)",
-          border: "1px solid rgba(244,197,66,0.2)",
+          border: "1px solid rgba(244,197,66,0.22)",
           borderRadius: "16px",
-          padding: "14px 16px",
-          margin: "12px 0 16px",
+          padding: "12px 14px",
+          marginBottom: "12px",
         }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "4px" }}>
-            <span style={{ fontSize: "11px", color: "#F4C542", fontWeight: 800, letterSpacing: "1px", textTransform: "uppercase" }}>
-              🔒 Plano Pronto para Desbloqueio
+            <span style={{ fontSize: "10px", color: "#F4C542", fontWeight: 800, letterSpacing: "1px", textTransform: "uppercase" }}>
+              🔒 Diagnóstico das 7 Respostas
             </span>
             <span style={{ fontSize: "12px" }}>{catInfo?.emoji}</span>
           </div>
 
-          <h2 style={{ fontSize: "15px", fontWeight: 800, margin: "0 0 6px", lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: "14px", fontWeight: 800, margin: "0 0 6px", lineHeight: 1.25 }}>
             Plano de 7 dias: {catInfo?.titulo}
           </h2>
 
-          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)", lineHeight: 1.5, margin: "0 0 10px" }}>
-            Cruzámos as tuas 7 respostas. Paga apenas 25 MT via M-Pesa para desbloquear a tua mensagem e as tuas tarefas.
-          </p>
+          {/* TEASER BORRADO (CURIOSIDADE PSICOLÓGICA) */}
+          <div style={{
+            background: "rgba(0,0,0,0.25)",
+            border: "1px dashed rgba(244,197,66,0.3)",
+            borderRadius: "10px",
+            padding: "8px 10px",
+            margin: "6px 0 8px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}>
+            <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.85)" }}>
+              <span style={{ color: "#F4C542", fontWeight: 700 }}>Gatilho identificado: </span>
+              <span style={{
+                filter: "blur(4px)",
+                userSelect: "none",
+                background: "rgba(255,255,255,0.15)",
+                padding: "1px 6px",
+                borderRadius: "4px",
+              }}>
+                Padrão Noturno Crítico
+              </span>
+            </div>
+            <span style={{ fontSize: "11px" }}>🔒</span>
+          </div>
 
-          <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-            {["✓ Diagnóstico real", "✓ Tarefas de 7 dias", "✓ Desafios diários"].map((tag, i) => (
+          <div style={{ display: "flex", gap: "5px", flexWrap: "wrap" }}>
+            {["✓ Diagnóstico real", "✓ Tarefas de 7 dias", "✓ Desafios práticos"].map((tag, i) => (
               <span key={i} style={{
                 background: "rgba(255,255,255,0.06)",
                 border: "1px solid rgba(255,255,255,0.1)",
                 borderRadius: "100px",
-                padding: "3px 8px",
-                fontSize: "10px",
+                padding: "2px 7px",
+                fontSize: "9.5px",
                 fontWeight: 600,
                 color: "rgba(255,255,255,0.85)",
               }}>
@@ -163,11 +223,11 @@ export default function PagamentoPage() {
           background: "rgba(255,255,255,0.03)",
           border: "1px solid rgba(255,255,255,0.08)",
           borderRadius: "16px",
-          padding: "16px",
-          marginBottom: "16px",
+          padding: "14px 16px",
+          marginBottom: "12px",
         }}>
-          {/* LOGO M-PESA + VALOR 25 MT */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
+          {/* LOGO M-PESA + VALOR 25 MT (COM ANCORAGEM) */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <div style={{
                 background: "#E60000",
@@ -176,7 +236,7 @@ export default function PagamentoPage() {
                 display: "flex",
                 boxShadow: "0 0 15px rgba(230,0,0,0.3)",
               }}>
-                <Image src="/mpesa.png" alt="M-Pesa" width={36} height={36} style={{ borderRadius: "6px" }} />
+                <Image src="/mpesa.png" alt="M-Pesa" width={34} height={34} style={{ borderRadius: "6px" }} />
               </div>
               <div>
                 <span style={{ fontSize: "14px", fontWeight: 800, color: "white", display: "block" }}>M-Pesa</span>
@@ -184,13 +244,15 @@ export default function PagamentoPage() {
               </div>
             </div>
             <div style={{ textAlign: "right" }}>
-              <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.4)", display: "block" }}>Taxa única</span>
+              <span style={{ fontSize: "9px", color: "#10B981", fontWeight: 700, display: "block", textTransform: "uppercase" }}>
+                Menos que 1 recarga
+              </span>
               <span style={{ fontSize: "24px", fontWeight: 900, color: "#F4C542", lineHeight: 1 }}>25 MT</span>
             </div>
           </div>
 
           {/* INPUT DO NÚMERO M-PESA */}
-          <label style={{ display: "block", fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.7)", marginBottom: "6px" }}>
+          <label style={{ display: "block", fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.7)", marginBottom: "5px" }}>
             Digita o teu número M-Pesa:
           </label>
           <div style={{ position: "relative" }}>
@@ -216,7 +278,7 @@ export default function PagamentoPage() {
                 background: "rgba(255,255,255,0.06)",
                 border: "1.5px solid rgba(255,255,255,0.14)",
                 borderRadius: "12px",
-                padding: "14px 14px 14px 58px",
+                padding: "13px 13px 13px 56px",
                 color: "white",
                 fontSize: "16px",
                 fontWeight: 700,
@@ -228,15 +290,26 @@ export default function PagamentoPage() {
               onBlur={e => (e.target as HTMLInputElement).style.borderColor = "rgba(255,255,255,0.14)"}
             />
           </div>
-          <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.4)", margin: "6px 0 0", textAlign: "center" }}>
-            Receberás o pop-up no teu celular para digitar o PIN M-Pesa
+
+          {/* AVISO DE PRIVACIDADE ABSOLUTA NO EXTRATO */}
+          <p style={{
+            fontSize: "10px",
+            color: "rgba(255,255,255,0.5)",
+            margin: "7px 0 0",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "4px",
+          }}>
+            <span>🔒</span> 100% Discreto · No extrato do M-Pesa não aparece o nome do vício
           </p>
         </div>
 
         {/* MENSAGEM DE ERRO SE HOUVER */}
         {erro && (
           <div style={{
-            marginBottom: "12px", padding: "10px 12px",
+            marginBottom: "10px", padding: "10px 12px",
             background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)",
             borderRadius: "10px",
           }}>
@@ -250,7 +323,7 @@ export default function PagamentoPage() {
           disabled={estado === "processando"}
           style={{
             width: "100%",
-            padding: "16px",
+            padding: "15px",
             borderRadius: "14px",
             border: "none",
             fontWeight: 900,
@@ -264,15 +337,15 @@ export default function PagamentoPage() {
             transition: "all 0.15s",
           }}
         >
-          {estado === "processando" ? "A contactar M-Pesa..." : "PAGAR 25 MT COM M-PESA →"}
+          {estado === "processando" ? "A contactar M-Pesa..." : "DESBLOQUEAR PLANO POR 25 MT →"}
         </button>
 
       </div>
 
       {/* RODAPÉ MÍNIMO */}
-      <footer style={{ textAlign: "center", paddingTop: "8px" }}>
-        <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", margin: 0 }}>
-          🔒 Pagamento 100% Seguro · Sem cadastro necessário · M-Pesa Moçambique
+      <footer style={{ textAlign: "center", paddingTop: "6px" }}>
+        <p style={{ fontSize: "9.5px", color: "rgba(255,255,255,0.3)", margin: 0 }}>
+          🔒 Pagamento Seguro Vodacom M-Pesa · Sem necessidade de cadastro · Acesso Imediato
         </p>
       </footer>
     </main>

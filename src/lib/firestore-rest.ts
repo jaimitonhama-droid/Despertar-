@@ -76,3 +76,4 @@ export async function criarResultadoFirestore(pedidoId: string, dados: Record<st
     return false;
   }
 }
+
