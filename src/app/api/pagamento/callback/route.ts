@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAdminDb } from "@/lib/firebase-admin";
+import { atualizarPedidoFirestore, criarResultadoFirestore } from "@/lib/firestore-rest";
 import crypto from "crypto";
 
 export async function POST(req: NextRequest) {
@@ -64,17 +64,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ recebido: true, nota: "Sem pedidoId" });
     }
 
-    const adminDb = getAdminDb();
-    const pedidoRef = adminDb.collection("pedidos").doc(pedidoId);
-    const pedidoSnap = await pedidoRef.get();
-
-    if (!pedidoSnap.exists) {
-      console.warn(`[DESPERTAR Webhook] Pedido ${pedidoId} não encontrado no Firestore.`);
-      return NextResponse.json({ recebido: true, nota: "Pedido inexistente" });
-    }
-
-    const pedidoData = pedidoSnap.data()!;
-
     // Determina se o pagamento teve sucesso ou falhou
     const isSuccess =
       event === "payment.succeeded" ||
@@ -90,31 +79,26 @@ export async function POST(req: NextRequest) {
       data.status === "CANCELLED";
 
     if (isSuccess) {
-      if (pedidoData.estado === "confirmado") {
-        return NextResponse.json({ mensagem: "Pedido já confirmado anteriormente." });
-      }
-
       const transacaoId = data.id || data.transaction_id || `TX-${Date.now()}`;
 
-      await pedidoRef.update({
+      // Atualiza o pedido no Firestore para "confirmado"
+      await atualizarPedidoFirestore(pedidoId, {
         estado: "confirmado",
         transacaoId,
         confirmadoEm: new Date().toISOString(),
         atualizadoEm: new Date().toISOString(),
       });
 
-      // Inicializa o resultado do plano para desbloqueio imediato no telemóvel do cliente
-      await adminDb.collection("resultados").doc(pedidoId).set({
+      // Cria o resultado para desbloqueio imediato do plano de 7 dias
+      await criarResultadoFirestore(pedidoId, {
         pedidoId,
-        telefone: pedidoData.telefone,
-        categoriaId: pedidoData.categoriaId,
         diasConcluidos: [],
         geradoEm: new Date().toISOString(),
-      }, { merge: true });
+      });
 
       console.log(`[DESPERTAR Webhook] Pagamento confirmado com sucesso para pedido: ${pedidoId}`);
     } else if (isFailed) {
-      await pedidoRef.update({
+      await atualizarPedidoFirestore(pedidoId, {
         estado: "recusado",
         motivoRecusa: data.failure_reason || "Transação não concluída no M-Pesa",
         atualizadoEm: new Date().toISOString(),

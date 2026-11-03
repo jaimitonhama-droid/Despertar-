@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAdminDb } from "@/lib/firebase-admin";
+import { atualizarPedidoFirestore } from "@/lib/firestore-rest";
 
 export async function POST(req: NextRequest) {
   try {
-    const adminDb = getAdminDb();
     const body = await req.json();
     const { pedidoId, telefone, valor } = body;
 
@@ -19,26 +18,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         { sucesso: false, mensagem: "Valor inválido." },
         { status: 400 }
-      );
-    }
-
-    // Verifica se o pedido existe no Firestore
-    const pedidoRef = adminDb.collection("pedidos").doc(pedidoId);
-    const pedidoSnap = await pedidoRef.get();
-
-    if (!pedidoSnap.exists) {
-      return NextResponse.json(
-        { sucesso: false, mensagem: "Pedido não encontrado." },
-        { status: 404 }
-      );
-    }
-
-    const pedidoData = pedidoSnap.data()!;
-
-    if (pedidoData.estado === "confirmado") {
-      return NextResponse.json(
-        { sucesso: false, mensagem: "Este pedido já foi pago." },
-        { status: 409 }
       );
     }
 
@@ -85,7 +64,8 @@ export async function POST(req: NextRequest) {
           sucesso: false,
           mensagem:
             zumboData?.error?.message ||
-            "Não foi possível contactar o M-Pesa. Confirma o número Vodacom.",
+            zumboData?.message ||
+            "Não foi possível contactar o M-Pesa. Confirma o teu número Vodacom.",
         },
         { status: 400 }
       );
@@ -93,7 +73,7 @@ export async function POST(req: NextRequest) {
 
     // Atualiza pedido no Firestore com a referência da cobrança
     const chargeId = zumboData?.data?.id || zumboData?.id || `ZUMBO-${Date.now()}`;
-    await pedidoRef.update({
+    await atualizarPedidoFirestore(pedidoId, {
       estado: "aguardando",
       telefone: numLimpo,
       gatewayRef: chargeId,
@@ -106,10 +86,10 @@ export async function POST(req: NextRequest) {
       pedidoId,
       chargeId,
     });
-  } catch (err) {
+  } catch (err: any) {
     console.error("[DESPERTAR] Erro no endpoint /api/pagamento/iniciar:", err);
     return NextResponse.json(
-      { sucesso: false, mensagem: "Erro interno do servidor." },
+      { sucesso: false, mensagem: err?.message || "Erro ao processar com a gateway." },
       { status: 500 }
     );
   }
